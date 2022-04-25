@@ -1,7 +1,7 @@
 import React from 'react'
-import SearchBar from './SearchBar'
 import { TProvider } from '../../theme'
-import { voivodeships, cities } from '../../mocks/dataMocks'
+import { cities } from '../../mocks/dataMocks'
+import SearchBar from './SearchBar'
 
 export default {
   title: 'SearchBar',
@@ -10,6 +10,6 @@ export default {
 
 export const SearchComponent = () => (
   <TProvider>
-    <SearchBar voivodeships={voivodeships} cities={cities} />
+    <SearchBar cities={cities} />
   </TProvider>
 )
