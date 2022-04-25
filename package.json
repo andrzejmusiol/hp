@@ -4,6 +4,7 @@
   "private": false,
   "main": "lib/index.js",
   "scripts": {
+    "start": "react-scripts start",
     "pretty": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "type-check": "tsc --noEmit",
     "build": "webpack",
@@ -24,6 +25,10 @@
   "license": "UNLICENSED",
   "author": "Andrzej Musioł",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/quicksand": "^4.5.6",
+    "@mui/material": "^5.6.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^14.1.1",
@@ -33,6 +38,7 @@
     "react-dom": "^18.0.0",
     "react-i18next": "^11.16.7",
     "react-redux": "^8.0.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.4.1",

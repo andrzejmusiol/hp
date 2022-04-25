@@ -14,7 +14,6 @@ module.exports = function config(env) {
     output: {
       path: path.resolve(__dirname, 'lib'),
       devtoolNamespace: pjson.name,
-      devtoolModuleFilenameTemplate: 'webpack://micro-frontends/[namespace]/[resource-path]?[loaders]',
     },
     devtool: 'source-map',
     resolve: {
@@ -23,7 +22,7 @@ module.exports = function config(env) {
     plugins: [
       new MiniCssExtractPlugin({ filename: 'index.css' }),
       new ModuleFederationPlugin({
-        name: 'fe_help_fans',
+        name: 'help_fans',
         filename: 'index.js',
         shared: {
           react: {
