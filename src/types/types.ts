@@ -13,5 +13,10 @@ export interface ICityOption {
 }
 
 export interface ICities {
-  cities: ICityOption[]
+  cities: string[]
+}
+
+export interface ICitiesState extends ICities {
+  citiesLoading: boolean
+  citiesError: boolean
 }

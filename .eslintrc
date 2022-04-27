@@ -24,6 +24,7 @@
         "prettier"
       ],
       "rules": {
+        "no-param-reassign": "off",
         "no-undef": "off",
         "no-use-before-define": "off",
         "no-unused-vars": "off",

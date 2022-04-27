@@ -1,7 +1,8 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 import { TProvider } from '../../theme'
-import { cities } from '../../mocks/dataMocks'
 import SearchBar from './SearchBar'
+import { store } from '../../store/store'
 
 export default {
   title: 'SearchBar',
@@ -10,6 +11,8 @@ export default {
 
 export const SearchComponent = () => (
   <TProvider>
-    <SearchBar cities={cities} />
+    <Provider store={store}>
+      <SearchBar />
+    </Provider>
   </TProvider>
 )
