@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    name: Tests
+    name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
