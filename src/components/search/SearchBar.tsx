@@ -11,7 +11,7 @@ const SearchBar = (): JSX.Element => {
     dispatch(fetchCities())
   }, [dispatch])
 
-  return <SearchField cities={getCities} data-test-id="search-bar-test-id" />
+  return <SearchField cities={getCities} />
 }
 
 export default SearchBar

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import Grid from '@mui/material/Grid'
-import CounterTitle from './CounterTitle'
+import UsageCounterTitle from './UsageCounterTitle'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
 import { fetchUsers } from '../../store/usersSlice'
 import OverlappingAvatars from '../avatars/OverlappingAvatars'
 
-const Counter = (): JSX.Element => {
+const UsageCounter = (): JSX.Element => {
   const getUsers = useAppSelector((state) => state.users.users)
   const dispatch = useAppDispatch()
 
@@ -21,15 +21,16 @@ const Counter = (): JSX.Element => {
           justifyContent="center"
           alignItems="center"
           spacing={3}
+          data-testid="usage-counter-test-id"
       >
-      <Grid item justifyContent="center" alignItems="center" direction="row" maxWidth="xs" padding="1rem">
+      <Grid item justifyContent="center" alignItems="center" maxWidth="xs" padding="1rem">
         <OverlappingAvatars users={getUsersAvatars} />
       </Grid>
-      <Grid item justifyContent="center" alignItems="center" direction="row" >
-        <CounterTitle />
+      <Grid item justifyContent="center" alignItems="center" >
+        <UsageCounterTitle />
       </Grid>
     </Grid>
   )
 }
 
-export default Counter
+export default UsageCounter

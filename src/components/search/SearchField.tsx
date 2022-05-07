@@ -20,6 +20,7 @@ const SearchField = ({ cities }: ICities): JSX.Element => {
           display="flex"
           justifyContent="center"
           alignItems="center"
+          data-testid="search-bar-test-id"
       >
             <Autocomplete
                 fullWidth
