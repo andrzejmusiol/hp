@@ -1,18 +1,27 @@
 import React from 'react'
 import { render, RenderResult } from '@testing-library/react'
-import SearchPage from '../SearchPage'
+import '@testing-library/jest-dom'
+import App from '../../App'
 
 let wrapper: RenderResult
 
-const renderApp = () => render(<SearchPage />)
+const renderComponent = () => render(<App />)
 
-describe('<HelpFans />', () => {
+describe('<App />', () => {
   beforeEach(async () => {
-    wrapper = await renderApp()
+    wrapper = await renderComponent()
+  })
+
+  it('Should usage avatars', async () => {
+    const usageCounter = await wrapper.findByTestId('usage-counter-test-id')
+    const avatars = wrapper.container.getElementsByClassName('MuiAvatar-circular').length
+
+    expect(usageCounter).toBeInTheDocument()
+    expect(avatars).toBe(4)
   })
 
   it('Should render search bar', async () => {
-    const app = await wrapper.getByTestId('search-bar-test-id')
-    expect(app).toBeInTheDocument()
+    const searchBar = await wrapper.findByTestId('search-bar-test-id')
+    expect(searchBar).toBeInTheDocument()
   })
 })

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { TProvider } from '../../theme/theme'
-import SearchBar from './SearchBar'
+import UsageCounter from './UsageCounter'
 import { store } from '../../store/store'
 
 export default {
-  title: 'SearchBar',
-  component: SearchBar,
+  title: 'UsageCounter',
+  component: UsageCounter,
 }
 
-export const SearchComponent = () => (
+export const UsageCounterComponent = () => (
   <TProvider>
     <Provider store={store}>
-      <SearchBar />
+      <UsageCounter />
     </Provider>
   </TProvider>
 )
