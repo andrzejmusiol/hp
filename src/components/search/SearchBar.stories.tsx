@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { TProvider } from '../../theme'
+import { TProvider } from '../../theme/theme'
 import SearchBar from './SearchBar'
 import { store } from '../../store/store'
 

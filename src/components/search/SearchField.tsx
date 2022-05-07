@@ -16,8 +16,8 @@ const SearchField = ({ cities }: ICities): React.ReactElement => {
   }
 
   return (
-    <Grid container spacing={2} direction="row" justifyContent="flex-start" alignItems="center">
-      <Grid item xs={2}>
+    <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
+      <Grid item xs={6} justifyContent="center">
         <Autocomplete
           {...searchOptions}
           id="disable-close-on-select"
@@ -27,7 +27,7 @@ const SearchField = ({ cities }: ICities): React.ReactElement => {
           renderInput={(params) => <TextField {...params} label="Najbliższe duże miasto" variant="standard" />}
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={6} justifyContent="center">
         <LoadingButton loading={false} loadingPosition="start" startIcon={<SearchIcon />} variant="contained">
           Szukaj
         </LoadingButton>

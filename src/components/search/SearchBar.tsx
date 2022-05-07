@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Grid from '@mui/material/Grid'
 import SearchField from './SearchField'
 import { fetchCities } from '../../store/slices'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
@@ -12,9 +13,9 @@ const SearchBar = (): React.ReactElement => {
   }, [dispatch])
 
   return (
-    <div data-test-id="search-bar-test-id">
-      <SearchField cities={getCities} />
-    </div>
+    <Grid container justifyContent="center" alignItems="center" direction="row">
+      <SearchField cities={getCities} data-test-id="search-bar-test-id" />
+    </Grid>
   )
 }
 

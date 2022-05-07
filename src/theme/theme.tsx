@@ -4,11 +4,20 @@ import '@fontsource/quicksand/400.css'
 import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
-import { colors } from './constants'
+import { colors } from './colors'
 
 export const theme = createTheme({
   typography: {
     fontFamily: ['QuickSand, sans-serif'].join(','),
+    h1: {
+      fontSize: '3rem',
+      fontWeight: 700,
+      color: colors.black,
+    },
+    subtitle1: {
+      fontWeight: 500,
+      color: colors.lightBlue
+    }
   },
   components: {
     MuiCssBaseline: {
@@ -23,12 +32,13 @@ export const theme = createTheme({
         root: {
           fontSize: '1.2rem',
           fontWeight: 700,
-          backgroundColor: colors.brand.blueDark,
-          boxShadow: 'none',
+          backgroundColor: colors.blue,
+          boxShadow: '0 .3rem 1rem rgba(0, 0, 0, .2)',
           borderRadius: 10,
           padding: '0.5rem 3rem',
+          color: colors.white,
           ':hover': {
-            backgroundColor: colors.brand.blueDark,
+            backgroundColor: colors.darkBlue,
             boxShadow: 'none',
           },
         },
