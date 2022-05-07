@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import Grid from '@mui/material/Grid'
 import SearchField from './SearchField'
-import { fetchCities } from '../../store/slices'
+import { fetchCities } from '../../store/citiesSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
 
-const SearchBar = (): React.ReactElement => {
+const SearchBar = (): JSX.Element => {
   const getCities = useAppSelector((state) => state.cities.cities)
   const dispatch = useAppDispatch()
 
@@ -12,11 +11,7 @@ const SearchBar = (): React.ReactElement => {
     dispatch(fetchCities())
   }, [dispatch])
 
-  return (
-    <Grid container justifyContent="center" alignItems="center" direction="row">
-      <SearchField cities={getCities} data-test-id="search-bar-test-id" />
-    </Grid>
-  )
+  return <SearchField cities={getCities} data-test-id="search-bar-test-id" />
 }
 
 export default SearchBar

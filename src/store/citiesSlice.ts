@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { ICitiesState } from '../types/types'
-import { RootState } from './store'
 import { cities } from '../mocks/dataMocks'
 
 const initialState: ICitiesState = {
@@ -31,7 +30,5 @@ export const citiesSlice = createSlice({
     })
   },
 })
-
-export const selectUsers = (state: RootState) => state.cities
 
 export default citiesSlice.reducer

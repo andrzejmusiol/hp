@@ -10,14 +10,23 @@ export const theme = createTheme({
   typography: {
     fontFamily: ['QuickSand, sans-serif'].join(','),
     h1: {
-      fontSize: '3rem',
+      fontSize: '4rem',
+      fontWeight: 700,
+      color: colors.black,
+    },
+    h6: {
+      fontSize: '1rem',
       fontWeight: 700,
       color: colors.black,
     },
     subtitle1: {
       fontWeight: 500,
-      color: colors.lightBlue
-    }
+      color: colors.lightBlue,
+    },
+    subtitle2: {
+      fontWeight: 500,
+      color: colors.lightBlue,
+    },
   },
   components: {
     MuiCssBaseline: {
@@ -50,6 +59,13 @@ export const theme = createTheme({
           fontSize: '1.2rem',
           fontWeight: 700,
           boxShadow: 'none',
+        },
+      },
+    },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          fontWeight: 700,
         },
       },
     },

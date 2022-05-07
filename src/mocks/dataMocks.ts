@@ -66,3 +66,66 @@ export const cities = [
   'Zielona Góra',
   'Żory',
 ]
+
+export const users = [
+  {
+    id: 'b8d2cd2c-c400-420c-9f85-e610a06ad4aa',
+    personalData: {
+      name: 'Karol',
+      surname: 'Nowak',
+      email: 'jan.nowak@gmail.com',
+      city: 'Zielona Góra',
+    },
+    offers: null,
+  },
+  {
+    id: 'd1806a7f-a693-4a18-af62-cb83468da334',
+    personalData: {
+      name: 'Hary',
+      surname: 'Garncarz',
+      email: 'h.garncarz@gmail.com',
+      city: 'Poznań',
+    },
+    offers: null,
+  },
+  {
+    id: '4e7afc35-d066-4b2e-bf8f-f03e420bd3d7',
+    personalData: {
+      name: 'Bolesław',
+      surname: 'Wesoły',
+      email: 'b.wesoly@gmail.com',
+      city: 'Warszawa',
+    },
+    offers: null,
+  },
+  {
+    id: 'c28239a2-7313-4be7-998e-139cb8c0c133',
+    personalData: {
+      name: 'Katarzyna',
+      surname: 'Nowak',
+      email: 'k.nowak@gmail.com',
+      city: 'Białystok',
+    },
+    offers: null,
+  },
+  {
+    id: '8a126c95-359c-4531-b210-0d393c834c0a',
+    personalData: {
+      name: 'Jan',
+      surname: 'Janowski',
+      email: 'j.janowski@gmail.com',
+      city: 'Rzeszów',
+    },
+    offers: null,
+  },
+  {
+    id: '2704035e-3c63-47d3-a04e-3a1559e38fec',
+    personalData: {
+      name: 'Małgorzata',
+      surname: 'Kolesławska',
+      email: 'm.koleslawska@gmail.com',
+      city: 'Wrocław',
+    },
+    offers: null,
+  },
+]
