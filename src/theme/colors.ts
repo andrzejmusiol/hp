@@ -14,5 +14,5 @@ export const avatarsColors: IAvatarColors = {
   green: ['#D5FFE0', '#6EFF95'],
   yellow: ['#FFECBF', '#FFB300'],
   red: ['#FFCCD3', '#FF0022'],
-  blue: ['#B8E0FF', '#0090FF']
+  blue: ['#B8E0FF', '#0090FF'],
 }

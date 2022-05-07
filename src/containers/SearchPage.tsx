@@ -6,12 +6,7 @@ import SearchBar from '../components/search/SearchBar'
 import UsageCounter from '../components/counter/UsageCounter'
 
 const SearchPage = (): JSX.Element => (
-    <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        minHeight="80vh"
-    >
+  <Box display="flex" justifyContent="center" alignItems="center" minHeight="80vh">
     <Container maxWidth="md">
       <Typography variant="h1" align="center" gutterBottom>
         Chcesz komuś pomóc?
@@ -22,7 +17,7 @@ const SearchPage = (): JSX.Element => (
       <UsageCounter />
       <SearchBar />
     </Container>
-    </Box>
+  </Box>
 )
 
 export default SearchPage

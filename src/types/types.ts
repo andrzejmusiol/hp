@@ -16,6 +16,11 @@ export interface ICities {
   cities: string[]
 }
 
+export interface ICitySelector {
+  cities: string[]
+  citySelectorCallback: (city: string) => void
+}
+
 export interface ICitiesState extends ICities {
   citiesLoading: boolean
   citiesError: boolean
