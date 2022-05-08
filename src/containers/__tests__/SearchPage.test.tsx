@@ -14,10 +14,10 @@ describe('<App />', () => {
 
   it('Should usage avatars', async () => {
     const usageCounter = await wrapper.findByTestId('usage-counter-test-id')
-    const avatars = wrapper.container.getElementsByClassName('MuiAvatar-circular').length
+    const avatars = wrapper.container.getElementsByClassName('chakra-avatar').length
 
     expect(usageCounter).toBeInTheDocument()
-    expect(avatars).toBe(4)
+    expect(avatars).toBe(3)
   })
 
   it('Should render search bar', async () => {

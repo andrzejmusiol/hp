@@ -5,6 +5,6 @@ import 'regenerator-runtime/runtime'
 import '@testing-library/jest-dom/extend-expect'
 
 beforeAll(async () => {
-    Intl.NumberFormat = IntlPolyfill.NumberFormat
-    Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat
+  Intl.NumberFormat = IntlPolyfill.NumberFormat
+  Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat
 })

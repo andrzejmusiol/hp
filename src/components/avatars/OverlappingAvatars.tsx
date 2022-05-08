@@ -1,17 +1,21 @@
 import React from 'react'
-import AvatarGroup from '@mui/material/AvatarGroup'
+import { Avatar, AvatarGroup } from '@chakra-ui/react'
+import { avatarsColors } from '../../theme/colors'
+
 import { IUser } from '../../types/types'
-import UserAvatar from './UserAvatar'
 
 interface IUserAvatar {
   users: IUser[]
 }
 
 const OverlappingAvatars = ({ users }: IUserAvatar): JSX.Element => (
-  <AvatarGroup max={4}>
-    {users.map((user) => (
-      <UserAvatar key={user.id} userName={user.personalData.name.charAt(0)} />
-    ))}
+  <AvatarGroup size="md" max={3}>
+    {users.map((user) => {
+      const colors =
+        avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]]
+
+      return <Avatar bgColor={colors[0]} color={colors[1]} name={user.personalData.name} />
+    })}
   </AvatarGroup>
 )
 
