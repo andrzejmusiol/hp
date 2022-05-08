@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Grid from '@mui/material/Grid'
+import { Flex, Box } from '@chakra-ui/react'
 import UsageCounterTitle from './UsageCounterTitle'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
 import { fetchUsers } from '../../store/usersSlice'
@@ -16,14 +16,14 @@ const UsageCounter = (): JSX.Element => {
   const getUsersAvatars = getUsers.filter((user, index) => index < 5)
 
   return (
-    <Grid container justifyContent="center" alignItems="center" spacing={3} data-testid="usage-counter-test-id">
-      <Grid item justifyContent="center" alignItems="center" maxWidth="xs" padding="1rem">
+    <Flex justify="center" data-testid="usage-counter-test-id">
+      <Box p="5">
         <OverlappingAvatars users={getUsersAvatars} />
-      </Grid>
-      <Grid item justifyContent="center" alignItems="center">
+      </Box>
+      <Box p="5">
         <UsageCounterTitle />
-      </Grid>
-    </Grid>
+      </Box>
+    </Flex>
   )
 }
 

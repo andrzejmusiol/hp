@@ -12,12 +12,17 @@ export interface ICityOption {
   wikiDataId: string
 }
 
+export interface ICity {
+  value: string
+  label: string
+}
+
 export interface ICities {
-  cities: string[]
+  cities: ICity[]
 }
 
 export interface ICitySelector {
-  cities: string[]
+  cities: ICity[]
   citySelectorCallback: (city: string) => void
 }
 
