@@ -28,7 +28,7 @@ describe('<SearchPage />', () => {
     expect(searchBar).toBeInTheDocument()
   })
 
-  it('Should usage avatars', async () => {
+  it('Should render usage avatars', async () => {
     const usageCounter = await wrapper.findByTestId('usage-counter-test-id')
     const avatars = wrapper.container.getElementsByClassName('chakra-avatar').length
 
