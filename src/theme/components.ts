@@ -5,7 +5,6 @@ export const components = {
     baseStyle: {
       fontSize: '1.2rem',
       fontWeight: 700,
-      boxShadow: '0 .3rem 1rem rgba(0, 0, 0, .1)',
       borderRadius: 10,
       border: 0,
       padding: '0.5rem 3rem',
@@ -14,6 +13,7 @@ export const components = {
       'blue-button': {
         bg: colors.blue,
         color: colors.white,
+        boxShadow: '0 .3rem 1rem rgba(0, 0, 0, .1)',
         ':hover': {
           bg: colors.darkBlue,
           boxShadow: 'none',
