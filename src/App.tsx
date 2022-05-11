@@ -6,6 +6,7 @@ import { store } from './store/store'
 import SearchPage from './containers/SearchPage'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
+import Results from './containers/Results'
 
 const App = (): JSX.Element => (
   <Provider store={store}>
@@ -13,6 +14,7 @@ const App = (): JSX.Element => (
       <Header />
       <Routes>
         <Route index element={<SearchPage />} />
+        <Route path="ogloszenia" element={<Results />} />
       </Routes>
       <Footer />
     </Box>

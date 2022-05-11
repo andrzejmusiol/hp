@@ -75,7 +75,6 @@ export const users = [
       email: 'jan.nowak@gmail.com',
       city: 'Zielona Góra',
     },
-    offers: null,
   },
   {
     id: 'd1806a7f-a693-4a18-af62-cb83468da334',
@@ -85,7 +84,6 @@ export const users = [
       email: 'h.garncarz@gmail.com',
       city: 'Poznań',
     },
-    offers: null,
   },
   {
     id: '4e7afc35-d066-4b2e-bf8f-f03e420bd3d7',
@@ -95,7 +93,6 @@ export const users = [
       email: 'b.wesoly@gmail.com',
       city: 'Warszawa',
     },
-    offers: null,
   },
   {
     id: 'c28239a2-7313-4be7-998e-139cb8c0c133',
@@ -105,7 +102,6 @@ export const users = [
       email: 'k.nowak@gmail.com',
       city: 'Białystok',
     },
-    offers: null,
   },
   {
     id: '8a126c95-359c-4531-b210-0d393c834c0a',
@@ -115,7 +111,6 @@ export const users = [
       email: 'j.janowski@gmail.com',
       city: 'Rzeszów',
     },
-    offers: null,
   },
   {
     id: '2704035e-3c63-47d3-a04e-3a1559e38fec',
@@ -125,6 +120,20 @@ export const users = [
       email: 'm.koleslawska@gmail.com',
       city: 'Wrocław',
     },
-    offers: null,
+  },
+]
+
+export const offers = [
+  {
+    id: 'ff23b714-a4ab-4090-9dce-d724fde91c77',
+    userId: 'b8d2cd2c-c400-420c-9f85-e610a06ad4aa',
+    title: 'Potrzebuję pomocy w wyniesieniu lodówki',
+    content: 'Mieszkam na 3 piętrze w bloku bez winy, niestety nie jestem sama w stanie znieść lodówki na dół',
+    nearestCity: 'Zielona Góra',
+    city: 'Czerwieńsk',
+    reward: 50,
+    createdAt: 1652287733,
+    expiredAt: 1654102133,
+    rewardPoints: 10,
   },
 ]

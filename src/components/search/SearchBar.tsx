@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Button, Flex, Box } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import SearchField from './SearchField'
 import { fetchCities } from '../../store/citiesSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
@@ -23,7 +24,7 @@ const SearchBar = (): JSX.Element => {
       </Box>
       <Box p="2">
         <Button variant="blue-button" loadingText="Szukam" colorScheme="teal">
-          Szukaj
+          <Link to="/ogloszenia">Szukaj</Link>
         </Button>
       </Box>
     </Flex>
