@@ -11,6 +11,24 @@ export const styles = {
       color: colors.black,
       fontSize: '3.5rem !important',
     },
+    h2: {
+      fontFamily: 'QuickSand !important',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '3.0rem !important',
+    },
+    h3: {
+      fontFamily: 'QuickSand !important',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '1.2rem !important',
+    },
+    h4: {
+      fontFamily: 'QuickSand !important',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '1.5rem !important',
+    },
     h6: {
       fontFamily: 'QuickSand !important',
       fontWeight: '700 !important',

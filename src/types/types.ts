@@ -23,10 +23,14 @@ export interface ICities {
 
 export interface ICitySelector {
   cities: ICity[]
-  citySelectorCallback: (city: string) => void
+  citySelectorCallback: (city: ICity) => void
 }
 
 export interface ICitiesState extends ICities {
+  selectedCity: {
+    value: string | null
+    label: string | null
+  }
   citiesLoading: boolean
   citiesError: boolean
 }
@@ -62,6 +66,7 @@ export interface IOffer {
   title: string
   content: string
   nearestCity: string
+  street: string
   city: string
   reward: number | null
   createdAt: number
@@ -80,4 +85,5 @@ export interface IOffersState extends IOffers {
 
 export interface IOffersContainer {
   offer: IOffer
+  user: IUser
 }

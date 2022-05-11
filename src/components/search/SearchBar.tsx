@@ -2,15 +2,16 @@ import React, { useEffect } from 'react'
 import { Button, Flex, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import SearchField from './SearchField'
-import { fetchCities } from '../../store/citiesSlice'
+import { fetchCities, setSelectedCity } from '../../store/citiesSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
+import { ICity } from '../../types/types'
 
 const SearchBar = (): JSX.Element => {
   const getCities = useAppSelector((state) => state.cities.cities)
   const dispatch = useAppDispatch()
 
-  const citySelectorCallback = (city: string) => {
-    console.warn(city)
+  const citySelectorCallback = (city: ICity) => {
+    dispatch(setSelectedCity(city))
   }
 
   useEffect(() => {

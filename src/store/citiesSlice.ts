@@ -1,9 +1,13 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { ICitiesState } from '../types/types'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ICitiesState, ICity } from '../types/types'
 import { cities } from '../mocks/dataMocks'
 
 const initialState: ICitiesState = {
   cities: [],
+  selectedCity: {
+    value: null,
+    label: null,
+  },
   citiesLoading: false,
   citiesError: false,
 }
@@ -13,7 +17,11 @@ export const fetchCities = createAsyncThunk('cities/fetchCities', async () => ci
 export const citiesSlice = createSlice({
   name: 'cities',
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedCity: (state, action: PayloadAction<ICity>) => {
+      state.selectedCity = action.payload
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCities.pending, (state) => {
       state.citiesLoading = true
@@ -30,5 +38,7 @@ export const citiesSlice = createSlice({
     })
   },
 })
+
+export const { setSelectedCity } = citiesSlice.actions
 
 export default citiesSlice.reducer
