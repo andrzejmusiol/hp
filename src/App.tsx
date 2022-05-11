@@ -1,5 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
+import { Routes, Route } from 'react-router-dom'
 import { Box } from '@chakra-ui/react'
 import { store } from './store/store'
 import SearchPage from './containers/SearchPage'
@@ -10,7 +11,9 @@ const App = (): JSX.Element => (
   <Provider store={store}>
     <Box w="100%" p={4}>
       <Header />
-      <SearchPage />
+      <Routes>
+        <Route index element={<SearchPage />} />
+      </Routes>
       <Footer />
     </Box>
   </Provider>

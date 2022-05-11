@@ -2,6 +2,7 @@ import React from 'react'
 import { render, RenderResult } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 import Header from '../../components/header/Header'
 import SearchPage from '../SearchPage'
 import Footer from '../../components/footer/Footer'
@@ -11,11 +12,13 @@ let wrapper: RenderResult
 
 const renderComponent = () =>
   render(
-    <Provider store={store}>
-      <Header />
-      <SearchPage />
-      <Footer />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Header />
+        <SearchPage />
+        <Footer />
+      </Provider>
+    </BrowserRouter>
   )
 
 describe('<SearchPage />', () => {
