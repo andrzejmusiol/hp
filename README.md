@@ -1,4 +1,4 @@
-# help-fans (url comming soon) connects people that want to help their neighbors. 
+# help-fans (url coming soon) connects people that want to help their neighbors. 
 
 ## Background
 
