@@ -1,15 +1,31 @@
 import React from 'react'
 import { render, RenderResult } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import App from '../../App'
+import { Provider } from 'react-redux'
+import Header from '../../components/header/Header'
+import SearchPage from '../SearchPage'
+import Footer from '../../components/footer/Footer'
+import { store } from '../../store/store'
 
 let wrapper: RenderResult
 
-const renderComponent = () => render(<App />)
+const renderComponent = () =>
+  render(
+    <Provider store={store}>
+      <Header />
+      <SearchPage />
+      <Footer />
+    </Provider>
+  )
 
-describe('<App />', () => {
+describe('<SearchPage />', () => {
   beforeEach(async () => {
     wrapper = await renderComponent()
+  })
+
+  it('Should render header', async () => {
+    const searchBar = await wrapper.findByTestId('header-test-id')
+    expect(searchBar).toBeInTheDocument()
   })
 
   it('Should usage avatars', async () => {
@@ -22,6 +38,11 @@ describe('<App />', () => {
 
   it('Should render search bar', async () => {
     const searchBar = await wrapper.findByTestId('search-bar-test-id')
+    expect(searchBar).toBeInTheDocument()
+  })
+
+  it('Should render footer', async () => {
+    const searchBar = await wrapper.findByTestId('footer-test-id')
     expect(searchBar).toBeInTheDocument()
   })
 })

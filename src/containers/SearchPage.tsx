@@ -4,7 +4,7 @@ import SearchBar from '../components/search/SearchBar'
 import UsageCounter from '../components/counter/UsageCounter'
 
 const SearchPage = (): JSX.Element => (
-  <Container maxW="3xl">
+  <Container maxW="3xl" mt="10rem" mb="20rem">
     <Center>
       <Heading as="h1">Chcesz komuś pomóc?</Heading>
     </Center>

@@ -25,6 +25,7 @@
   "license": "UNLICENSED",
   "author": "Andrzej Musioł",
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -90,6 +91,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "file-loader": "^6.2.0",
     "http-proxy-middleware": "^2.0.6",
     "intl": "^1.2.5",
     "jest": "^27.5.1",
