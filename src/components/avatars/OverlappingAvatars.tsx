@@ -14,7 +14,7 @@ const OverlappingAvatars = ({ users }: IUserAvatar): JSX.Element => (
       const colors =
         avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]]
 
-      return <Avatar bgColor={colors[0]} color={colors[1]} name={user.personalData.name} />
+      return <Avatar key={user.id} bgColor={colors[0]} color={colors[1]} name={user.personalData.name} />
     })}
   </AvatarGroup>
 )

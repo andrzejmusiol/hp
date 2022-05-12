@@ -1,5 +1,6 @@
 import React from 'react'
-import { Heading, Text, Container, Center } from '@chakra-ui/react'
+import { Heading, Text, Container, Center, Box, Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import SearchBar from '../components/search/SearchBar'
 import UsageCounter from '../components/counter/UsageCounter'
 
@@ -13,6 +14,14 @@ const SearchPage = (): JSX.Element => (
     </Text>
     <UsageCounter />
     <SearchBar />
+    <Box textAlign="center">
+      <Text align="center" mb="0">
+        Potrzebujesz pomocy?
+      </Text>
+      <Link to="/">
+        <Button variant="link-button">Dodaj ogłoszenie</Button>
+      </Link>
+    </Box>
   </Container>
 )
 

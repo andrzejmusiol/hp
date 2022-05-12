@@ -20,6 +20,15 @@ export const components = {
           color: colors.white,
         },
       },
+      'link-button': {
+        bg: 'none',
+        color: colors.lightBlue,
+        ':hover': {
+          bg: 'none',
+          boxShadow: 'none',
+          color: colors.darkBlue,
+        },
+      },
     },
   },
 }

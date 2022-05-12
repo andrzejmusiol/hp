@@ -19,19 +19,19 @@ const Results = (): JSX.Element => {
   const renderOffers = () =>
     getOffers.map((offer) => {
       const offerUser = getUsers.find((user) => user.id === offer.userId)
-      return offerUser ? <Offer offer={offer} user={offerUser} /> : null
+      return offerUser ? <Offer key={offer.id} offer={offer} user={offerUser} /> : null
     })
 
   return (
-    <Container maxW='100%' mt="3rem" mb="3rem">
-      <Flex justifyItems="center" alignItems="center">
+    <Container maxW="100%" mt="1rem" mb="3rem">
+      <Flex justifyContent="center" alignItems="center" mb="2rem">
         <Box textAlign="center" w="100%">
           <Text>okolica</Text>
           <Heading as="h2">Bydgoszcz</Heading>
           <Text>{getOffers.length} osób szuka pomocy</Text>
         </Box>
       </Flex>
-      <Flex justifyItems="center" alignItems="center" flexWrap='wrap'>
+      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         {renderOffers()}
       </Flex>
     </Container>
