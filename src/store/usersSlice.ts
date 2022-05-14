@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { IUsersState } from '../types/types'
-import { users } from '../mocks/dataMocks'
 
 const initialState: IUsersState = {
   users: [],
@@ -8,7 +7,10 @@ const initialState: IUsersState = {
   usersError: false,
 }
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => users)
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const response = await fetch(`/api/users/`)
+  return response.json()
+})
 
 export const usersSlice = createSlice({
   name: 'users',

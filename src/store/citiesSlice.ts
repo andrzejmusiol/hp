@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ICitiesState, ICity } from '../types/types'
-import { cities } from '../mocks/dataMocks'
+import { cities } from '../mocks/data'
 
 const initialState: ICitiesState = {
   cities: [],

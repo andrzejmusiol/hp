@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { IOffersState } from '../types/types'
-import { offers } from '../mocks/dataMocks'
 
 const initialState: IOffersState = {
   offers: [],
@@ -8,7 +7,10 @@ const initialState: IOffersState = {
   offersError: false,
 }
 
-export const fetchOffers = createAsyncThunk('cities/fetchCities', async () => offers)
+export const fetchOffers = createAsyncThunk('offers/fetchOffers', async () => {
+  const response = await fetch(`/api/offers/`)
+  return response.json()
+})
 
 export const offersSlice = createSlice({
   name: 'offers',

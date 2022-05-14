@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import Header from '../../components/header/Header'
-import SearchPage from '../SearchPage'
+import Search from '../Search'
 import Footer from '../../components/footer/Footer'
 import { store } from '../../store/store'
 
@@ -15,13 +15,13 @@ const renderComponent = () =>
     <BrowserRouter>
       <Provider store={store}>
         <Header />
-        <SearchPage />
+        <Search />
         <Footer />
       </Provider>
     </BrowserRouter>
   )
 
-describe('<SearchPage />', () => {
+describe('<Search />', () => {
   beforeEach(async () => {
     wrapper = await renderComponent()
   })

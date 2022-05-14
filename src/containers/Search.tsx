@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../components/search/SearchBar'
 import UsageCounter from '../components/counter/UsageCounter'
 
-const SearchPage = (): JSX.Element => (
+const Search = (): JSX.Element => (
   <Container maxW="3xl" mt="10rem" mb="20rem">
     <Center>
       <Heading as="h1">Chcesz komuś pomóc?</Heading>
@@ -25,4 +25,4 @@ const SearchPage = (): JSX.Element => (
   </Container>
 )
 
-export default SearchPage
+export default Search

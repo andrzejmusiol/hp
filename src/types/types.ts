@@ -86,4 +86,10 @@ export interface IOffersState extends IOffers {
 export interface IOffersContainer {
   offer: IOffer
   user: IUser
+  isLoading: boolean
+}
+
+export interface IMockStore {
+  state: any
+  children: JSX.Element
 }
