@@ -23,10 +23,14 @@ export interface ICities {
 
 export interface ICitySelector {
   cities: ICity[]
-  citySelectorCallback: (city: string) => void
+  citySelectorCallback: (city: ICity) => void
 }
 
 export interface ICitiesState extends ICities {
+  selectedCity: {
+    value: string | null
+    label: string | null
+  }
   citiesLoading: boolean
   citiesError: boolean
 }
@@ -42,18 +46,9 @@ export interface IUserPersonalData {
   city: string
 }
 
-export interface IUserOffer {
-  cityArea: string
-  city: string
-  title: string
-  content: string
-  reward: number | null
-}
-
 export interface IUser {
   id: string
   personalData: IUserPersonalData
-  offers: IUserOffer | null
 }
 
 export interface IUsers {
@@ -63,4 +58,38 @@ export interface IUsers {
 export interface IUsersState extends IUsers {
   usersLoading: boolean
   usersError: boolean
+}
+
+export interface IOffer {
+  id: string
+  userId: string
+  title: string
+  content: string
+  nearestCity: string
+  street: string
+  city: string
+  reward: number | null
+  createdAt: number
+  expiredAt: number
+  rewardPoints: number
+}
+
+export interface IOffers {
+  offers: IOffer[]
+}
+
+export interface IOffersState extends IOffers {
+  offersLoading: boolean
+  offersError: boolean
+}
+
+export interface IOffersContainer {
+  offer: IOffer
+  user: IUser
+  isLoading: boolean
+}
+
+export interface IMockStore {
+  state: any
+  children: JSX.Element
 }

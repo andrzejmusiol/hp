@@ -6,6 +6,7 @@ export const colors = {
   blue: '#7FB5FF',
   lightBlue: '#839EB5',
   darkBlue: '#3389FF',
+  yellow: '#FFB300',
 }
 
 export const avatarsColors: IAvatarColors = {

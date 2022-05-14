@@ -8,7 +8,7 @@ const SearchField = ({ cities, citySelectorCallback }: ICitySelector): JSX.Eleme
     options={cities}
     placeholder="Wybierz najbliższe duże miasto"
     onChange={(value) => {
-      if (value) citySelectorCallback(value.value)
+      if (value) citySelectorCallback(value)
     }}
   />
 )
