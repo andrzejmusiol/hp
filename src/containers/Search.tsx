@@ -7,9 +7,11 @@ import UsageCounter from '../components/counter/UsageCounter'
 const Search = (): JSX.Element => (
   <Container maxW="3xl" mt="10rem" mb="20rem">
     <Center>
-      <Heading as="h1">Chcesz komuś pomóc?</Heading>
+      <Heading as="h1" data-testid="search-heading-test-id">
+        Chcesz komuś pomóc?
+      </Heading>
     </Center>
-    <Text align="center">
+    <Text align="center" data-testid="search-sub-heading-test-id">
       Znajdź ogłoszenia w Twojej okolicy, pomóż sąsiadom, wesprzyj lokalną społeczność, zgarniaj nagrody!
     </Text>
     <UsageCounter />

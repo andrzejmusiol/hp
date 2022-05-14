@@ -4,35 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { Story } from '@storybook/react'
 import Results from './Results'
 import { TProvider } from '../theme/theme'
-import { cities, offers, users } from '../mocks/data'
-import { MockStore } from '../utils/storiesUtils'
-
-export const MockedState = {
-  cities: {
-    cities,
-    selectedCity: {
-      value: 'zielona-gora',
-      label: 'Zielona Góra',
-    },
-    citiesLoading: false,
-    citiesError: false,
-  },
-  users: {
-    users,
-    usersLoading: false,
-    usersError: false,
-  },
-  offers: {
-    offers,
-    offersLoading: false,
-    offersError: false,
-  },
-}
+import { offers } from '../mocks/data'
+import { MockStore } from '../utils/mockUtils'
+import { mockedStore } from '../mocks/store'
 
 export default {
   title: 'Results',
   component: Results,
-  excludeStories: /.*MockedState$/,
 }
 
 const Template = () => (
@@ -49,7 +27,7 @@ ResultsPage.decorators = [
   (story) => (
     <MockStore
       state={{
-        ...MockedState,
+        ...mockedStore,
         offers: {
           offers,
           offersLoading: false,

@@ -3,14 +3,20 @@ import { render, RenderResult } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
+import thunk from 'redux-thunk'
+import configureStore from 'redux-mock-store'
+import { Store } from 'redux'
 import Header from '../../components/header/Header'
 import Search from '../Search'
 import Footer from '../../components/footer/Footer'
-import { store } from '../../store/store'
+import { mockedStore } from '../../mocks/store'
 
 let wrapper: RenderResult
 
-const renderComponent = () =>
+const middlewares = [thunk]
+const mockStore = configureStore(middlewares)
+
+const renderComponent = (store: Store) =>
   render(
     <BrowserRouter>
       <Provider store={store}>
@@ -23,12 +29,23 @@ const renderComponent = () =>
 
 describe('<Search />', () => {
   beforeEach(async () => {
-    wrapper = await renderComponent()
+    const store = mockStore(mockedStore)
+    wrapper = await renderComponent(store)
   })
 
   it('Should render header', async () => {
     const searchBar = await wrapper.findByTestId('header-test-id')
     expect(searchBar).toBeInTheDocument()
+  })
+
+  it('Should render Search Page heading', async () => {
+    const header = await wrapper.findByTestId('search-heading-test-id')
+    const subHeader = await wrapper.findByTestId('search-sub-heading-test-id')
+
+    expect(header).toHaveTextContent('Chcesz komuś pomóc?')
+    expect(subHeader).toHaveTextContent(
+      'Znajdź ogłoszenia w Twojej okolicy, pomóż sąsiadom, wesprzyj lokalną społeczność, zgarniaj nagrody!'
+    )
   })
 
   it('Should render usage avatars', async () => {

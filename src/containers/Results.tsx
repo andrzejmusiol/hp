@@ -13,9 +13,9 @@ const Results = (): JSX.Element => {
   const getUsers = useAppSelector((state) => state.users.users)
   const dispatch = useAppDispatch()
 
-    useEffect(() => {
-        dispatch(fetchOffers())
-    }, [dispatch])
+  useEffect(() => {
+    dispatch(fetchOffers())
+  }, [dispatch])
 
   const getOffersByCity = useMemo(
     () => getOffers.filter((offer) => offer.nearestCity === getSelectedCity.label),
