@@ -2,9 +2,6 @@ import { colors } from './colors'
 
 export const styles = {
   global: {
-    body: {
-      fontFamily: 'QuickSand',
-    },
     h1: {
       fontFamily: 'QuickSand !important',
       fontWeight: '700 !important',
