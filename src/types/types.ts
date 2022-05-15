@@ -70,9 +70,9 @@ export interface IOffer {
   street: string
   city: string
   reward: number | null
+  otherReward: string | null
   createdAt: number | null
   expiredAt: number | null
-  rewardPoints: number | null
 }
 
 export interface IOffers {

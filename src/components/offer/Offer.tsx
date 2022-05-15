@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { Box, Heading, Badge, Text, Skeleton, useDisclosure } from '@chakra-ui/react'
 import { IOffersContainer } from '../../types/types'
 import UserAvatar from '../avatars/UserAvatar'
-import { avatarsColors, colors } from '../../theme/colors'
+import { avatarsColors } from '../../theme/colors'
 import { useAppDispatch } from '../../hooks/storeHooks'
 import { setSelectedOffer } from '../../store/offersSlice'
 import OfferModal from './OfferModal'
@@ -68,10 +68,7 @@ const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer
               {renderLimitedContent(offer.content)}
             </Text>
             <Box mt="2rem" textAlign="right" data-testid="offer-reward-test-id">
-              <Box as="span" color={colors.yellow} fontSize="lg" fontWeight="bold">
-                {offer.rewardPoints} punktów
-              </Box>
-              <Box as="h4">{offer.reward ? `${offer.reward} PLN` : '-'}</Box>
+              {offer.reward ?  <Box as="h4">{`${offer.reward} PLN`}</Box> : <Box as="h4">{offer.otherReward}</Box>}
             </Box>
           </Box>
         </Box>

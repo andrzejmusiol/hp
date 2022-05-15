@@ -16,7 +16,6 @@ import {
 } from '@chakra-ui/react'
 import { IOffer } from '../../types/types'
 import Overlay from './Overlay'
-import { colors } from '../../theme/colors'
 
 interface IOfferModal {
   avatar: JSX.Element
@@ -73,10 +72,9 @@ const OfferModal = ({
               <Heading as="h3" ml="0.7rem">
                 Nagroda:
               </Heading>
-              <Box as="span" color={colors.yellow} fontSize="lg" fontWeight="bold">
-                {offer.rewardPoints} punktów
+              <Box textAlign="right" data-testid="offer-reward-test-id">
+                {offer.reward ?  <Box as="h4">{`${offer.reward} PLN`}</Box> : <Box as="h4">{offer.otherReward}</Box>}
               </Box>
-              <Box as="h4">{offer.reward ? `${offer.reward} PLN` : ''}</Box>
             </Box>
           </Box>
         </ModalBody>
