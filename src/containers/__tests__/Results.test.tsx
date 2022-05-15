@@ -8,7 +8,7 @@ import { Store } from 'redux'
 import { Provider } from 'react-redux'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import Results from '../Results'
+import Offers from '../Offers'
 import { setSelectedCity } from '../../store/citiesSlice'
 import { mockedStore } from '../../mocks/store'
 
@@ -22,13 +22,13 @@ const renderComponent = (store: Store) =>
     <BrowserRouter>
       <Provider store={store}>
         <Header />
-        <Results />
+        <Offers />
         <Footer />
       </Provider>
     </BrowserRouter>
   )
 
-describe('<Results />', () => {
+describe('<Offers />', () => {
   beforeEach(async () => {
     const store = mockStore(mockedStore)
     store.dispatch(

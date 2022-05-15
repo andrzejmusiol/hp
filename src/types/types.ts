@@ -69,9 +69,9 @@ export interface IOffer {
   street: string
   city: string
   reward: number | null
-  createdAt: number
-  expiredAt: number
-  rewardPoints: number
+  createdAt: number | null
+  expiredAt: number | null
+  rewardPoints: number | null
 }
 
 export interface IOffers {
@@ -79,6 +79,7 @@ export interface IOffers {
 }
 
 export interface IOffersState extends IOffers {
+  selectedOffer?: IOffer
   offersLoading: boolean
   offersError: boolean
 }
@@ -87,6 +88,7 @@ export interface IOffersContainer {
   offer: IOffer
   user: IUser
   isLoading: boolean
+  onOpen: () => void
 }
 
 export interface IMockStore {
