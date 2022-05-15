@@ -6,6 +6,7 @@ import Offer from '../components/offer/Offer'
 import RenderError from '../components/errors/RenderError'
 
 const Offers = (): JSX.Element => {
+  const isUserAuthenticated = useAppSelector((state) => state.user.isAuthenticated)
   const getOffers = useAppSelector((state) => state.offers.offers)
   const offersLoading = useAppSelector((state) => state.offers.offersLoading)
   const offersError = useAppSelector((state) => state.offers.offersError)
@@ -26,7 +27,15 @@ const Offers = (): JSX.Element => {
   const renderOffers = () =>
     getOffersByCity.map((offer) => {
       const getOfferUser = getUsers.find((user) => user.id === offer.userId)
-      return getOfferUser ? <Offer key={offer.id} offer={offer} user={getOfferUser} isLoading={offersLoading} /> : null
+      return getOfferUser ? (
+        <Offer
+          key={offer.id}
+          offer={offer}
+          user={getOfferUser}
+          isLoading={offersLoading}
+          isUserAuthenticated={isUserAuthenticated}
+        />
+      ) : null
     })
 
   return offersError ? (

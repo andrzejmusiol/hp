@@ -1,6 +1,14 @@
 import { cities, offers, users } from './data'
 
 export const mockedStore = {
+  user: {
+    isAuthenticated: false,
+  },
+  users: {
+    users,
+    usersLoading: false,
+    usersError: false,
+  },
   cities: {
     cities,
     selectedCity: {
@@ -9,11 +17,6 @@ export const mockedStore = {
     },
     citiesLoading: false,
     citiesError: false,
-  },
-  users: {
-    users,
-    usersLoading: false,
-    usersError: false,
   },
   offers: {
     offers,

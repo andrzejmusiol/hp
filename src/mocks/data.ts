@@ -74,6 +74,7 @@ export const users = [
       surname: 'Nowak',
       email: 'jan.nowak@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -83,6 +84,7 @@ export const users = [
       surname: 'Garncarz',
       email: 'h.garncarz@gmail.com',
       city: 'Poznań',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -92,6 +94,7 @@ export const users = [
       surname: 'Wesoły',
       email: 'b.wesoly@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -101,6 +104,7 @@ export const users = [
       surname: 'Nowak',
       email: 'k.nowak@gmail.com',
       city: 'Białystok',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -110,6 +114,7 @@ export const users = [
       surname: 'Janowski',
       email: 'j.janowski@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -119,6 +124,7 @@ export const users = [
       surname: 'Kolesławska',
       email: 'm.koleslawska@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
 ]
@@ -128,7 +134,7 @@ export const offers = [
     id: 'ff23b714-a4ab-4090-9dce-d724fde91c77',
     userId: 'b8d2cd2c-c400-420c-9f85-e610a06ad4aa',
     title: 'Potrzebuję pomocy w wyniesieniu lodówki',
-    content: 'Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół',
+    content: 'Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół.',
     nearestCity: 'Zielona Góra',
     city: 'Czerwieńsk',
     street: 'ul. Rzeźniczaka',

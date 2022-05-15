@@ -36,7 +36,8 @@ export const styles = {
       fontFamily: 'QuickSand !important',
       fontWeight: '700 !important',
       color: colors.black,
-      fontSize: '2rem !important',
+      fontSize: '1.2rem !important',
+      padding: 0,
     },
     p: {
       fontFamily: 'QuickSand',

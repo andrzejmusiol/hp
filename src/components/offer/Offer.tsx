@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React, { useMemo } from 'react'
 import { Box, Heading, Badge, Text, Skeleton, useDisclosure } from '@chakra-ui/react'
 import { IOffersContainer } from '../../types/types'
 import UserAvatar from '../avatars/UserAvatar'
@@ -7,7 +7,7 @@ import { useAppDispatch } from '../../hooks/storeHooks'
 import { setSelectedOffer } from '../../store/offersSlice'
 import OfferModal from './OfferModal'
 
-const Offer = ({ offer, user, isLoading }: IOffersContainer): JSX.Element => {
+const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const renderLimitedContent = (content: string) => (content.length > 65 ? `${content.substring(0, 65)}...` : content)
   const dispatch = useAppDispatch()
@@ -17,13 +17,21 @@ const Offer = ({ offer, user, isLoading }: IOffersContainer): JSX.Element => {
     onOpen()
   }
 
-  const avatarOfferColor = useMemo(() =>
-    avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]]
-  , [])
+  const avatarOfferColor = useMemo(
+    () => avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]],
+    []
+  )
 
-  const userAvatar = useMemo(() =>
-    <UserAvatar userName={user.personalData.name} data-testid="offer-avatar-test-id" avatarColors={avatarOfferColor} />,
-      [user, avatarOfferColor])
+  const userAvatar = useMemo(
+    () => (
+      <UserAvatar
+        userName={user.personalData.name}
+        data-testid="offer-avatar-test-id"
+        avatarColors={avatarOfferColor}
+      />
+    ),
+    [user, avatarOfferColor]
+  )
 
   return (
     <Box
@@ -48,6 +56,8 @@ const Offer = ({ offer, user, isLoading }: IOffersContainer): JSX.Element => {
               fontSize="xs"
               textTransform="uppercase"
               data-testid="offer-city-id"
+              alignContent="center"
+              display="flex"
             >
               <Badge>{offer.city}</Badge> {offer.street}
             </Box>
@@ -58,12 +68,20 @@ const Offer = ({ offer, user, isLoading }: IOffersContainer): JSX.Element => {
               <Box as="span" color={colors.yellow} fontSize="lg" fontWeight="bold">
                 {offer.rewardPoints} punktów
               </Box>
-              <Box as="h4">{offer.reward ? `${offer.reward} PLN` : 'FREE'}</Box>
+              <Box as="h4">{offer.reward ? `${offer.reward} PLN` : '-'}</Box>
             </Box>
           </Box>
         </Box>
       </Skeleton>
-      <OfferModal avatar={userAvatar} isOpen={isOpen} onClose={onClose} offer={offer} />
+      <OfferModal
+        avatar={userAvatar}
+        userName={user.personalData.name}
+        phone={user.personalData.phone}
+        isOpen={isOpen}
+        onClose={onClose}
+        offer={offer}
+        isUserAuthenticated={isUserAuthenticated}
+      />
     </Box>
   )
 }

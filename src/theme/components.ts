@@ -32,9 +32,4 @@ export const components = {
       },
     },
   },
-  Avatar: {
-    baseStyle: {
-      width: '100px !important',
-    },
-  },
 }
