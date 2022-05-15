@@ -31,4 +31,9 @@ export const components = {
       },
     },
   },
+  Modal: {
+    baseStyle: {
+      maxWidth: '50%',
+    },
+  },
 }

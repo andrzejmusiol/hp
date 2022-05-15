@@ -9,7 +9,7 @@ import { mockedStore } from '../mocks/store'
 
 export default {
   title: 'Offers',
-  component: Offers
+  component: Offers,
 }
 
 const Template = () => (

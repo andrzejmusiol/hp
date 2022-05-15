@@ -14,7 +14,7 @@ const initialState: IOffersState = {
     reward: null,
     createdAt: null,
     expiredAt: null,
-    rewardPoints: null
+    rewardPoints: null,
   },
   offersLoading: false,
   offersError: false,

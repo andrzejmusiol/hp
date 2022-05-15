@@ -8,22 +8,22 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  ModalOverlay
 } from '@chakra-ui/react'
-import {IOffer} from "../../types/types"
-import Overlay from "./Overlay"
+import { IOffer } from '../../types/types'
+import Overlay from './Overlay'
 
 interface IOfferModal {
+  avatar: JSX.Element
   isOpen: boolean
   onClose: () => void
   offer: IOffer
 }
 
-const OfferModal = ({ isOpen, onClose, offer }: IOfferModal): JSX.Element => (
-  <Modal isCentered isOpen={isOpen} onClose={onClose} size='xs'>
+const OfferModal = ({ avatar, isOpen, onClose, offer }: IOfferModal): JSX.Element => (
+  <Modal isCentered isOpen={isOpen} onClose={onClose} size="xs" scrollBehavior="inside" motionPreset="slideInBottom">
     <Overlay />
     <ModalContent>
-      <ModalOverlay />
+      {avatar}
       <ModalHeader>{offer.title}</ModalHeader>
       <ModalCloseButton />
       <ModalBody>

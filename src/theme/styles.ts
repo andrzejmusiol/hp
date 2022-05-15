@@ -35,6 +35,12 @@ export const styles = {
       color: colors.black,
       fontSize: '1.1rem !important',
     },
+    header: {
+      fontFamily: 'QuickSand !important',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '2rem !important',
+    },
     p: {
       fontFamily: 'QuickSand',
       fontWeight: 500,

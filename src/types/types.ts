@@ -88,7 +88,6 @@ export interface IOffersContainer {
   offer: IOffer
   user: IUser
   isLoading: boolean
-  onOpen: () => void
 }
 
 export interface IMockStore {
