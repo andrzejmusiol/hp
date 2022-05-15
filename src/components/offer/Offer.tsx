@@ -41,6 +41,9 @@ const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer
       m="0.5rem"
       data-testid="offer-test-id"
       onClick={setAndOpenTheOffer}
+      style={{
+        cursor: 'pointer',
+      }}
     >
       <Skeleton isLoaded={!isLoading} data-testid="offer-skeleton-test-id">
         <Box p="6" display="flex">
