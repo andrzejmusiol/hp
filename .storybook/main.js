@@ -7,7 +7,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/preset-create-react-app"
+    "@storybook/preset-create-react-app",
+    "@chakra-ui/storybook-addon"
   ],
   "framework": "@storybook/react",
   "core": {
@@ -17,5 +18,18 @@ module.exports = {
     '@chakra-ui/react': {
       "disable": true,
     },
+  },
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          "@emotion/core": "@emotion/react",
+          "emotion-theming": "@emotion/react",
+        },
+      },
+    };
   },
 }
