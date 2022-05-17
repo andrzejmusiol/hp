@@ -14,6 +14,7 @@ export const components = {
         bg: colors.blue,
         color: colors.white,
         boxShadow: '0 .3rem 1rem rgba(0, 0, 0, .1)',
+        padding: '1rem 2rem',
         ':hover': {
           bg: colors.darkBlue,
           boxShadow: 'none',

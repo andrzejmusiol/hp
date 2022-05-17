@@ -6,7 +6,7 @@ import { store } from './store/store'
 import Search from './containers/Search'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
-import Results from './containers/Results'
+import Offers from './containers/Offers'
 
 const App = (): JSX.Element => (
   <Provider store={store}>
@@ -14,7 +14,7 @@ const App = (): JSX.Element => (
       <Header />
       <Routes>
         <Route index element={<Search />} />
-        <Route path="ogloszenia" element={<Results />} />
+        <Route path="ogloszenia" element={<Offers />} />
       </Routes>
       <Footer />
     </Box>

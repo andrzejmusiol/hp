@@ -74,6 +74,7 @@ export const users = [
       surname: 'Nowak',
       email: 'jan.nowak@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -83,6 +84,7 @@ export const users = [
       surname: 'Garncarz',
       email: 'h.garncarz@gmail.com',
       city: 'Poznań',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -92,6 +94,7 @@ export const users = [
       surname: 'Wesoły',
       email: 'b.wesoly@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -101,6 +104,7 @@ export const users = [
       surname: 'Nowak',
       email: 'k.nowak@gmail.com',
       city: 'Białystok',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -110,6 +114,7 @@ export const users = [
       surname: 'Janowski',
       email: 'j.janowski@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
   {
@@ -119,6 +124,7 @@ export const users = [
       surname: 'Kolesławska',
       email: 'm.koleslawska@gmail.com',
       city: 'Zielona Góra',
+      phone: '+48 123 456 789',
     },
   },
 ]
@@ -128,14 +134,14 @@ export const offers = [
     id: 'ff23b714-a4ab-4090-9dce-d724fde91c77',
     userId: 'b8d2cd2c-c400-420c-9f85-e610a06ad4aa',
     title: 'Potrzebuję pomocy w wyniesieniu lodówki',
-    content: 'Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół',
+    content: 'Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół.',
     nearestCity: 'Zielona Góra',
     city: 'Czerwieńsk',
     street: 'ul. Rzeźniczaka',
     reward: 50,
+    otherReward: null,
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 10,
   },
   {
     id: '735e52aa-0791-45e7-a4c3-be3989256daf',
@@ -146,9 +152,9 @@ export const offers = [
     city: 'Zielona Góra',
     street: 'ul. Rczajowa',
     reward: null,
+    otherReward: 'Własne wyroby',
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 20,
   },
   {
     id: '3048041c-4370-421d-b747-d3e062f4235d',
@@ -160,9 +166,9 @@ export const offers = [
     city: 'Zielona Góra',
     street: 'ul. Źródlana',
     reward: 70,
+    otherReward: null,
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 15,
   },
   {
     id: 'fc64dbcf-23a4-49d0-b4b1-9de571bc135f',
@@ -173,9 +179,9 @@ export const offers = [
     city: 'Białystok',
     street: 'ul. Kawowa',
     reward: 30,
+    otherReward: null,
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 20,
   },
   {
     id: 'f97e73d1-1eb2-44d4-8b41-67cc7b294f9d',
@@ -187,9 +193,9 @@ export const offers = [
     city: 'Przylep',
     street: 'ul. Jedności',
     reward: null,
+    otherReward: 'Obiad',
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 20,
   },
   {
     id: 'f1280d36-8d88-470d-826c-5ce1c4012ac0',
@@ -200,9 +206,9 @@ export const offers = [
     city: 'Czerwieńsk',
     street: 'ul. Rzeźniczaka',
     reward: 55,
+    otherReward: null,
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 10,
   },
   {
     id: 'dd59f30a-d085-477f-90f3-c59cd486a620',
@@ -214,8 +220,8 @@ export const offers = [
     city: 'Zielona Góra',
     street: 'ul. Rczajowa',
     reward: 150,
+    otherReward: null,
     createdAt: 1652287733,
     expiredAt: 1654102133,
-    rewardPoints: 20,
   },
 ]

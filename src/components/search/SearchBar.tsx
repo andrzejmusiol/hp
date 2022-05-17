@@ -9,7 +9,6 @@ import { ICity } from '../../types/types'
 const SearchBar = (): JSX.Element => {
   const getCities = useAppSelector((state) => state.cities.cities)
   const getSelectedCity = useAppSelector((state) => state.cities.selectedCity)
-
   const dispatch = useAppDispatch()
 
   const citySelectorCallback = (city: ICity) => {
@@ -17,7 +16,7 @@ const SearchBar = (): JSX.Element => {
   }
 
   const onSearchHandler = () => {
-    console.warn(getSelectedCity)
+    // Todo: insert Firestore query here
   }
 
   useEffect(() => {

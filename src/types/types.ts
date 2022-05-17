@@ -39,23 +39,24 @@ export interface IAvatarColors {
   [key: string]: string[]
 }
 
-export interface IUserPersonalData {
+export interface IOfferUserPersonalData {
   name: string
   surname: string
   email: string
   city: string
+  phone: number
 }
 
-export interface IUser {
+export interface IOfferUser {
   id: string
-  personalData: IUserPersonalData
+  personalData: IOfferUserPersonalData
 }
 
-export interface IUsers {
-  users: IUser[]
+export interface IOfferUsers {
+  users: IOfferUser[]
 }
 
-export interface IUsersState extends IUsers {
+export interface IOffersUsersState extends IOfferUsers {
   usersLoading: boolean
   usersError: boolean
 }
@@ -69,9 +70,9 @@ export interface IOffer {
   street: string
   city: string
   reward: number | null
-  createdAt: number
-  expiredAt: number
-  rewardPoints: number
+  otherReward: string | null
+  createdAt: number | null
+  expiredAt: number | null
 }
 
 export interface IOffers {
@@ -79,17 +80,23 @@ export interface IOffers {
 }
 
 export interface IOffersState extends IOffers {
+  selectedOffer?: IOffer
   offersLoading: boolean
   offersError: boolean
 }
 
 export interface IOffersContainer {
   offer: IOffer
-  user: IUser
+  user: IOfferUser
   isLoading: boolean
+  isUserAuthenticated: boolean
 }
 
 export interface IMockStore {
   state: any
   children: JSX.Element
+}
+
+export interface IUser {
+  isAuthenticated: boolean
 }

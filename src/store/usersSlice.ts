@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { IUsersState } from '../types/types'
+import { IOffersUsersState } from '../types/types'
 
-const initialState: IUsersState = {
+const initialState: IOffersUsersState = {
   users: [],
   usersLoading: false,
   usersError: false,

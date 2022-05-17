@@ -3,6 +3,19 @@ import { IOffersState } from '../types/types'
 
 const initialState: IOffersState = {
   offers: [],
+  selectedOffer: {
+    id: '',
+    userId: '',
+    title: '',
+    content: '',
+    nearestCity: '',
+    street: '',
+    city: '',
+    reward: null,
+    otherReward: null,
+    createdAt: null,
+    expiredAt: null,
+  },
   offersLoading: false,
   offersError: false,
 }
@@ -32,5 +45,6 @@ export const offersSlice = createSlice({
     })
   },
 })
+
 
 export default offersSlice.reducer

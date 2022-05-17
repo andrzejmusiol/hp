@@ -2,9 +2,6 @@ import { colors } from './colors'
 
 export const styles = {
   global: {
-    body: {
-      fontFamily: 'QuickSand',
-    },
     h1: {
       fontFamily: 'QuickSand !important',
       fontWeight: '700 !important',
@@ -34,6 +31,13 @@ export const styles = {
       fontWeight: '700 !important',
       color: colors.black,
       fontSize: '1.1rem !important',
+    },
+    header: {
+      fontFamily: 'QuickSand !important',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '1.2rem !important',
+      padding: 0,
     },
     p: {
       fontFamily: 'QuickSand',
