@@ -6,12 +6,12 @@ import { BrowserRouter } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
+import userEvent from "@testing-library/user-event"
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Offers from '../Offers'
 import { setSelectedCity } from '../../store/citiesSlice'
 import { mockedStore } from '../../mocks/store'
-import userEvent from "@testing-library/user-event"
 import '@testing-library/jest-dom/extend-expect'
 
 let wrapper: RenderResult
