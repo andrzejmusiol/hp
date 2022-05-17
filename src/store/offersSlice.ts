@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IOffer, IOffersState } from '../types/types'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { IOffersState } from '../types/types'
 
 const initialState: IOffersState = {
   offers: [],
@@ -12,9 +12,9 @@ const initialState: IOffersState = {
     street: '',
     city: '',
     reward: null,
+    otherReward: null,
     createdAt: null,
     expiredAt: null,
-    rewardPoints: null,
   },
   offersLoading: false,
   offersError: false,
@@ -28,11 +28,7 @@ export const fetchOffers = createAsyncThunk('offers/fetchOffers', async () => {
 export const offersSlice = createSlice({
   name: 'offers',
   initialState,
-  reducers: {
-    setSelectedOffer: (state, action: PayloadAction<IOffer>) => {
-      state.selectedOffer = action.payload
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOffers.pending, (state) => {
       state.offersLoading = true
@@ -50,6 +46,5 @@ export const offersSlice = createSlice({
   },
 })
 
-export const { setSelectedOffer } = offersSlice.actions
 
 export default offersSlice.reducer

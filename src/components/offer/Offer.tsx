@@ -3,19 +3,11 @@ import { Box, Heading, Badge, Text, Skeleton, useDisclosure } from '@chakra-ui/r
 import { IOffersContainer } from '../../types/types'
 import UserAvatar from '../avatars/UserAvatar'
 import { avatarsColors } from '../../theme/colors'
-import { useAppDispatch } from '../../hooks/storeHooks'
-import { setSelectedOffer } from '../../store/offersSlice'
 import OfferModal from './OfferModal'
 
 const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const renderLimitedContent = (content: string) => (content.length > 65 ? `${content.substring(0, 65)}...` : content)
-  const dispatch = useAppDispatch()
-
-  const setAndOpenTheOffer = async () => {
-    await dispatch(setSelectedOffer(offer))
-    onOpen()
-  }
 
   const avatarOfferColor = useMemo(
     () => avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]],
@@ -40,7 +32,7 @@ const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer
       borderRadius="lg"
       m="0.5rem"
       data-testid="offer-test-id"
-      onClick={setAndOpenTheOffer}
+      onClick={onOpen}
       style={{
         cursor: 'pointer',
       }}
