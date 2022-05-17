@@ -5,7 +5,7 @@ import { Story } from '@storybook/react'
 import { TProvider } from '../theme/theme'
 import { MockStore } from '../utils/mockUtils'
 import { mockedStore } from '../mocks/store'
-import RegisterForm from "../components/authentication/Register"
+import RegisterForm from '../components/authentication/Register'
 
 export default {
   title: 'Register',

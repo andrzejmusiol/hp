@@ -60,7 +60,7 @@ const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer
               {renderLimitedContent(offer.content)}
             </Text>
             <Box mt="2rem" textAlign="right" data-testid="offer-reward-test-id">
-              {offer.reward ?  <Box as="h4">{`${offer.reward} PLN`}</Box> : <Box as="h4">{offer.otherReward}</Box>}
+              {offer.reward ? <Box as="h4">{`${offer.reward} PLN`}</Box> : <Box as="h4">{offer.otherReward}</Box>}
             </Box>
           </Box>
         </Box>

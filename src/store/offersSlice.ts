@@ -46,5 +46,4 @@ export const offersSlice = createSlice({
   },
 })
 
-
 export default offersSlice.reducer

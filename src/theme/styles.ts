@@ -51,6 +51,6 @@ export const styles = {
       fontWeight: '700 !important',
       color: colors.black,
       fontSize: '1.1rem',
-    }
+    },
   },
 }
