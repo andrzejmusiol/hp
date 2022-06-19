@@ -35,13 +35,12 @@ const RegisterForm = () => {
         py={{ base: 10, sm: 20, lg: 32 }}
       >
         <Stack spacing={{ base: 10, md: 20 }}>
-          <Heading lineHeight={1.1} fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
-            Dołącz do społęczności, która
-            <Text as="span" bgGradient={`linear(to-r, ${colors.blue}, ${colors.darkBlue})`} bgClip="text">
-              {' '}
-              kocha{' '}
-            </Text>
-            pomagać
+          <Heading
+            lineHeight={1.1}
+            fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
+            data-testId="register-form-header-test-id"
+          >
+            Dołącz do społęczności, która kocha pomagać
           </Heading>
           <Stack direction="row" spacing={4} align="center">
             <OverlappingAvatars users={getUsers} />
@@ -65,7 +64,7 @@ const RegisterForm = () => {
                 height: 'full',
                 rounded: 'full',
                 transform: 'scale(1.125)',
-                bgGradient: `linear(to-r, ${colors.blue}, ${colors.darkBlue})`,
+                bgGradient: `${colors.blue}`,
                 position: 'absolute',
                 zIndex: -1,
                 top: 0,
@@ -86,19 +85,19 @@ const RegisterForm = () => {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>Imię</FormLabel>
-                    <Input type="text" />
+                    <Input type="text" data-testId="first-name-input-test-id" />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Nazwisko</FormLabel>
-                    <Input type="text" />
+                    <Input type="text" data-testId="surname-input-test-id" />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>E-mail</FormLabel>
-                <Input type="email" />
+                <Input type="email" data-testId="email-input-test-id" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Hasło</FormLabel>
@@ -112,7 +111,9 @@ const RegisterForm = () => {
                 </InputGroup>
               </FormControl>
               <Stack spacing={10} pt={2}>
-                <Button variant="blue-button">Zarejestruj się</Button>
+                <Button variant="blue-button" data-testId="submit-button-test-id">
+                  Zarejestruj się
+                </Button>
               </Stack>
             </Stack>
           </Box>
