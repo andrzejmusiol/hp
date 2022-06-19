@@ -1,12 +1,12 @@
 import React from 'react'
-import {RenderResult, render, waitFor} from '@testing-library/react'
+import { RenderResult, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import configureStore from 'redux-mock-store'
 import { BrowserRouter } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
-import userEvent from "@testing-library/user-event"
+import userEvent from '@testing-library/user-event'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Offers from '../Offers'
@@ -84,7 +84,9 @@ describe('<Offers />', () => {
     expect(offerModalUserName).toHaveTextContent('Karol')
     expect(offerModalTitle).toHaveTextContent('Potrzebuję pomocy w wyniesieniu lodówki')
     expect(offerModalCity).toHaveTextContent('Czerwieńsk')
-    expect(offerModalContent).toHaveTextContent('Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół.')
+    expect(offerModalContent).toHaveTextContent(
+      'Mieszkam na 3 piętrze w bloku bez windy, niestety nie jestem sama w stanie znieść lodówki na dół.'
+    )
     expect(offerModalReward).toHaveTextContent('50 PLN')
     expect(offerModalPhoneNumber).toBeInTheDocument()
     expect(offerModalCloseButton).toBeInTheDocument()

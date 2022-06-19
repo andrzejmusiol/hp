@@ -46,5 +46,11 @@ export const styles = {
       fontSize: '1.1rem',
       margin: '1rem 0',
     },
+    label: {
+      fontFamily: 'QuickSand',
+      fontWeight: '700 !important',
+      color: colors.black,
+      fontSize: '1.1rem',
+    },
   },
 }
