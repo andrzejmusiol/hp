@@ -2,27 +2,27 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
-import { TProvider } from '../theme/theme'
-import { MockStore } from '../utils/mockUtils'
-import { mockedStore } from '../mocks/store'
-import LoginForm from '../components/authentication/Login'
+import { TProvider } from '../../theme/theme'
+import { MockStore } from '../../utils/mockUtils'
+import { mockedStore } from '../../mocks/store'
+import Header from '../../components/header/Header'
 
 export default {
-  title: 'Login',
-  component: LoginForm,
+  title: 'Components',
+  component: Header,
 }
 
 const Template = () => (
   <BrowserRouter>
     <TProvider>
-      <LoginForm />
+      <Header />
     </TProvider>
   </BrowserRouter>
 )
 
-export const LoginPage: Story = Template.bind({})
+export const AppHeader: Story = Template.bind({})
 
-LoginPage.decorators = [
+AppHeader.decorators = [
   (story) => (
     <MockStore
       state={{
