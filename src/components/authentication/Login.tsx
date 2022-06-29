@@ -33,12 +33,12 @@ const LoginForm = () => (
           </FormControl>
           <Stack spacing={10}>
             <Stack direction={{ base: 'column', sm: 'row' }} align="start" justify="space-between">
-              <Checkbox>Remember me</Checkbox>
+              <Checkbox>Pamiętaj mnie</Checkbox>
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <Link color="blue.400">Forgot password?</Link>
+              <Link color="blue.400">Przypomnij hasło?</Link>
             </Stack>
             <Button variant="blue-button" data-testId="login-form-submit-button-test-id">
-              Sign in
+              Zaloguj
             </Button>
           </Stack>
         </Stack>

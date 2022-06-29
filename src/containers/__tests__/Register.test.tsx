@@ -34,11 +34,13 @@ describe('<RegisterForm />', () => {
     const registerHeader = await wrapper.findByTestId('register-form-header-test-id')
     const registerNameInput = await wrapper.findByTestId('first-name-input-test-id')
     const registerSurnameInput = await wrapper.findByTestId('surname-input-test-id')
+    const registerPasswordButton = await wrapper.findByTestId('register-password-test-id')
     const registerSubmitButton = await wrapper.findByTestId('email-input-test-id')
 
-    expect(registerHeader).toHaveTextContent('Dołącz do społęczności, która kocha pomagać')
+    expect(registerHeader).toHaveTextContent('Dołączdo społeczności, która kocha pomagać ✌')
     expect(registerNameInput).toBeInTheDocument()
     expect(registerSurnameInput).toBeInTheDocument()
+    expect(registerPasswordButton).toBeInTheDocument()
     expect(registerSubmitButton).toBeInTheDocument()
 
     // TODO Test and mock submitting form after Firebase implementation

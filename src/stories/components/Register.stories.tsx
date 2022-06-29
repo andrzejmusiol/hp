@@ -2,27 +2,27 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
-import { TProvider } from '../theme/theme'
-import Search from '../containers/Search'
-import { MockStore } from '../utils/mockUtils'
-import { mockedStore } from '../mocks/store'
+import { TProvider } from '../../theme/theme'
+import { MockStore } from '../../utils/mockUtils'
+import { mockedStore } from '../../mocks/store'
+import RegisterForm from '../../components/authentication/Register'
 
 export default {
-  title: 'Search',
-  component: Search,
+  title: 'Components',
+  component: RegisterForm,
 }
 
-export const Template = () => (
+const Template = () => (
   <BrowserRouter>
     <TProvider>
-      <Search />
+      <RegisterForm />
     </TProvider>
   </BrowserRouter>
 )
 
-export const SearchPage: Story = Template.bind({})
+export const RegisterPage: Story = Template.bind({})
 
-SearchPage.decorators = [
+RegisterPage.decorators = [
   (story) => (
     <MockStore
       state={{
