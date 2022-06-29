@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Story } from '@storybook/react'
 import { TProvider } from '../../theme/theme'
 import Header from '../../components/header/Header'
-import {storyMockDecorator} from "../../utils/mockUtils";
+import { storyMockDecorator } from '../../utils/mockUtils'
 
 export default {
   title: 'Components',

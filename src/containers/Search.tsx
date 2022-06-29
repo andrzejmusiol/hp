@@ -17,9 +17,7 @@ const Search = (): JSX.Element => (
     <UsageCounter />
     <SearchBar />
     <Box textAlign="center">
-      <Text mb="0">
-        Potrzebujesz pomocy?
-      </Text>
+      <Text mb="0">Potrzebujesz pomocy?</Text>
       <Link to="/">
         <Button variant="link-button">Dodaj ogłoszenie</Button>
       </Link>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Flex, Box, Spacer, ButtonGroup, Button } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 import LogoIcon from '../../assets/icons/Logo'
-import UserProfileIcon from "../../assets/icons/UserProfile"
+import UserProfileIcon from '../../assets/icons/UserProfile'
 
 const Header = (): JSX.Element => (
   <Flex minWidth="max-content" alignItems="center" gap="2" data-testid="header-test-id">

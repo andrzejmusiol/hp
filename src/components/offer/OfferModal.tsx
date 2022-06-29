@@ -65,7 +65,9 @@ const OfferModal = ({
         </Box>
         <ModalCloseButton data-testid="offer-modal-close-button-test-id" />
         <ModalBody p="0">
-          <Text textAlign='left' data-testid="offer-modal-content-test-id">{offer.content}</Text>
+          <Text textAlign="left" data-testid="offer-modal-content-test-id">
+            {offer.content}
+          </Text>
           <Box>
             <Box mt="2rem" textAlign="right" data-testid="offer-reward-test-id">
               <Heading as="h3" ml="0.7rem">
