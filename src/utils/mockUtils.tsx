@@ -2,6 +2,7 @@ import { Provider } from 'react-redux'
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 import React from 'react'
 import { IMockStore } from '../types/types'
+import {mockedStore} from "../mocks/store";
 
 export const MockStore = ({ state, children }: IMockStore) => {
   const entries = Object.entries(state)
@@ -30,4 +31,18 @@ export const MockStore = ({ state, children }: IMockStore) => {
       {children}
     </Provider>
   )
+}
+
+export const storyMockDecorator = (component: any) => {
+    return component.decorators = [
+        (story: any) => (
+            <MockStore
+                state={{
+                    ...mockedStore,
+                }}
+            >
+                {story()}
+            </MockStore>
+        ),
+    ]
 }

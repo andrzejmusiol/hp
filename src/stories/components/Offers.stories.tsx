@@ -4,8 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Story } from '@storybook/react'
 import Offers from '../../containers/Offers'
 import { TProvider } from '../../theme/theme'
-import { MockStore } from '../../utils/mockUtils'
-import { mockedStore } from '../../mocks/store'
+import {storyMockDecorator} from '../../utils/mockUtils'
 
 export default {
   title: 'Components',
@@ -20,16 +19,6 @@ const Template = () => (
   </BrowserRouter>
 )
 
-export const OffersPage: Story = Template.bind({})
+export const OffersComponent: Story = Template.bind({})
 
-OffersPage.decorators = [
-  (story) => (
-    <MockStore
-      state={{
-        ...mockedStore,
-      }}
-    >
-      {story()}
-    </MockStore>
-  ),
-]
+storyMockDecorator(OffersComponent)

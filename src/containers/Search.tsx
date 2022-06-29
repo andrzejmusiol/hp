@@ -11,13 +11,13 @@ const Search = (): JSX.Element => (
         Chcesz komuś pomóc?
       </Heading>
     </Center>
-    <Text align="center" data-testid="search-sub-heading-test-id">
+    <Text data-testid="search-sub-heading-test-id">
       Znajdź ogłoszenia w Twojej okolicy, pomóż sąsiadom, wesprzyj lokalną społeczność, zgarniaj nagrody!
     </Text>
     <UsageCounter />
     <SearchBar />
     <Box textAlign="center">
-      <Text align="center" mb="0">
+      <Text mb="0">
         Potrzebujesz pomocy?
       </Text>
       <Link to="/">

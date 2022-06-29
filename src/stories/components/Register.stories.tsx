@@ -3,8 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
 import { TProvider } from '../../theme/theme'
-import { MockStore } from '../../utils/mockUtils'
-import { mockedStore } from '../../mocks/store'
+import {storyMockDecorator} from '../../utils/mockUtils'
 import RegisterForm from '../../components/authentication/Register'
 
 export default {
@@ -20,16 +19,6 @@ const Template = () => (
   </BrowserRouter>
 )
 
-export const RegisterPage: Story = Template.bind({})
+export const RegisterComponent: Story = Template.bind({})
 
-RegisterPage.decorators = [
-  (story) => (
-    <MockStore
-      state={{
-        ...mockedStore,
-      }}
-    >
-      {story()}
-    </MockStore>
-  ),
-]
+storyMockDecorator(RegisterComponent)
