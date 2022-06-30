@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Container, Stack, Link, Text } from '@chakra-ui/react'
+import { Link as RouteLink } from 'react-router-dom'
 import GitHubIcon from '../../assets/icons/GitHub'
 
 const Footer = (): JSX.Element => (
@@ -15,10 +16,10 @@ const Footer = (): JSX.Element => (
     >
       <Stack direction="row" spacing={6}>
         <Text my="0">
-          <Link href="#">Jak to działa?</Link>
+          <RouteLink to="/faq">Jak to działa?</RouteLink>
         </Text>
         <Text>
-          <Link href="#">Kontakt</Link>
+          <RouteLink to="/kontakt">Kontakt</RouteLink>
         </Text>
         <Text>
           <Link href="https://github.com/bigeyedes/help-fans" isExternal>

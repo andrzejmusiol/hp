@@ -33,8 +33,9 @@ export const MockStore = ({ state, children }: IMockStore) => {
   )
 }
 
-export const storyMockDecorator = (component: any) => {
-  return (component.decorators = [
+// eslint-disable-next-line no-return-assign
+export const storyMockDecorator = (component: any) =>
+  (component.decorators = [
     (story: any) => (
       <MockStore
         state={{
@@ -45,4 +46,3 @@ export const storyMockDecorator = (component: any) => {
       </MockStore>
     ),
   ])
-}

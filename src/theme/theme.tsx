@@ -20,8 +20,4 @@ export interface IThemeProvider {
   children: JSX.Element
 }
 
-export const ThemeProvider = ({ children }: IThemeProvider) => (
-  <ChakraProvider resetCSS={true} theme={theme}>
-    {children}
-  </ChakraProvider>
-)
+export const ThemeProvider = ({ children }: IThemeProvider) => <ChakraProvider theme={theme}>{children}</ChakraProvider>
