@@ -91,9 +91,7 @@ const OfferModal = ({
               label="Zaloguj się, aby zobaczyć numer"
               data-testid="number-button-tooltip-test-id"
             >
-              <Button data-testid="number-button-test-id">
-                {phoneNumber}
-              </Button>
+              <Button data-testid="number-button-test-id">{phoneNumber}</Button>
             </Tooltip>
           </Box>
         </ModalFooter>

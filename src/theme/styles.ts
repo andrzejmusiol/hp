@@ -55,6 +55,6 @@ export const styles = {
     a: {
       fontFamily: 'QuickSand',
       fontSize: '1rem',
-    }
+    },
   },
 }

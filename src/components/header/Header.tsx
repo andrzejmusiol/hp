@@ -15,7 +15,7 @@ const Header = (): JSX.Element => (
     <Spacer />
     <ButtonGroup gap="2">
       <Link to="/profil">
-          <UserProfileIcon />
+        <UserProfileIcon />
       </Link>
       <Link to="/offer">
         <ButtonGroup size="sm" isAttached>
