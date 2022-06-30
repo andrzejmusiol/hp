@@ -3,9 +3,8 @@ import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
 import Offers from '../../containers/Offers'
-import { TProvider } from '../../theme/theme'
-import { MockStore } from '../../utils/mockUtils'
-import { mockedStore } from '../../mocks/store'
+import { ThemeProvider } from '../../theme/theme'
+import { storyMockDecorator } from '../../utils/mockUtils'
 
 export default {
   title: 'Components',
@@ -14,22 +13,12 @@ export default {
 
 const Template = () => (
   <BrowserRouter>
-    <TProvider>
+    <ThemeProvider>
       <Offers />
-    </TProvider>
+    </ThemeProvider>
   </BrowserRouter>
 )
 
-export const OffersPage: Story = Template.bind({})
+export const OffersComponent: Story = Template.bind({})
 
-OffersPage.decorators = [
-  (story) => (
-    <MockStore
-      state={{
-        ...mockedStore,
-      }}
-    >
-      {story()}
-    </MockStore>
-  ),
-]
+storyMockDecorator(OffersComponent)

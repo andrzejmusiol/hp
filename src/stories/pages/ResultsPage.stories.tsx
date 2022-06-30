@@ -2,9 +2,8 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
-import { TProvider } from '../../theme/theme'
-import { MockStore } from '../../utils/mockUtils'
-import { mockedStore } from '../../mocks/store'
+import { ThemeProvider } from '../../theme/theme'
+import { storyMockDecorator } from '../../utils/mockUtils'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Offers from '../../containers/Offers'
@@ -16,26 +15,16 @@ export default {
 
 const Template = () => (
   <BrowserRouter>
-    <TProvider>
+    <ThemeProvider>
       <>
         <Header />
         <Offers />
         <Footer />
       </>
-    </TProvider>
+    </ThemeProvider>
   </BrowserRouter>
 )
 
 export const ResultsPage: Story = Template.bind({})
 
-ResultsPage.decorators = [
-  (story) => (
-    <MockStore
-      state={{
-        ...mockedStore,
-      }}
-    >
-      {story()}
-    </MockStore>
-  ),
-]
+storyMockDecorator(ResultsPage)

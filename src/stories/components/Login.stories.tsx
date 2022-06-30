@@ -2,9 +2,8 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
-import { TProvider } from '../../theme/theme'
-import { MockStore } from '../../utils/mockUtils'
-import { mockedStore } from '../../mocks/store'
+import { ThemeProvider } from '../../theme/theme'
+import { storyMockDecorator } from '../../utils/mockUtils'
 import LoginForm from '../../components/authentication/Login'
 
 export default {
@@ -14,22 +13,12 @@ export default {
 
 const Template = () => (
   <BrowserRouter>
-    <TProvider>
+    <ThemeProvider>
       <LoginForm />
-    </TProvider>
+    </ThemeProvider>
   </BrowserRouter>
 )
 
-export const LoginPage: Story = Template.bind({})
+export const LoginComponent: Story = Template.bind({})
 
-LoginPage.decorators = [
-  (story) => (
-    <MockStore
-      state={{
-        ...mockedStore,
-      }}
-    >
-      {story()}
-    </MockStore>
-  ),
-]
+storyMockDecorator(LoginComponent)
