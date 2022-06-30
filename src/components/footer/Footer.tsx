@@ -4,7 +4,7 @@ import { Link as RouteLink } from 'react-router-dom'
 import GitHubIcon from '../../assets/icons/GitHub'
 
 const Footer = (): JSX.Element => (
-  <Box>
+  <Box data-testId="footer-test-id">
     <Container
       as={Stack}
       maxW="6xl"
