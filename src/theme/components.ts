@@ -1,35 +1,37 @@
 import { colors } from './colors'
 
-export const components = {
-  Button: {
+export const Button = {
     baseStyle: {
-      fontSize: '1.2rem',
       fontWeight: 700,
-      borderRadius: 10,
+      borderRadius: 5,
       border: 0,
-      padding: '0.5rem 3rem',
     },
     variants: {
-      'blue-button': {
+      'blue': {
+        fontSize: '0.8rem',
         bg: colors.blue,
         color: colors.white,
         boxShadow: '0 .3rem 1rem rgba(0, 0, 0, .1)',
-        padding: '1rem 2rem',
-        ':hover': {
+        padding: '1rem',
+        _hover: {
           bg: colors.darkBlue,
           boxShadow: 'none',
           color: colors.white,
         },
       },
-      'link-button': {
+      'link': {
         bg: 'none',
-        color: colors.lightBlue,
-        ':hover': {
+        color: colors.blue,
+        _hover: {
           bg: 'none',
           boxShadow: 'none',
           color: colors.darkBlue,
+          textDecoration: 'none'
         },
       },
     },
-  },
-}
+  defaultProps: {
+    variant: 'blue'
+  }
+  }
+

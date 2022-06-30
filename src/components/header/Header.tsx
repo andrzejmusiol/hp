@@ -15,12 +15,10 @@ const Header = (): JSX.Element => (
     <Spacer />
     <ButtonGroup gap="2">
       <Link to="/profil">
-        <Button variant="link" mt="0.2rem">
           <UserProfileIcon />
-        </Button>
       </Link>
       <Link to="/offer">
-        <ButtonGroup size="sm" isAttached variant="blue-button">
+        <ButtonGroup size="sm" isAttached>
           <Button mr="-px">
             <Box pr="2">Dodaj</Box>
             <AddIcon />

@@ -44,7 +44,7 @@ const OfferModal = ({
       <ModalContent p="3rem" data-testid="offer-modal-test-id">
         <Flex alignItems="center" mb="1rem" data-testid="offer-modal-avatar-test-id">
           {avatar}
-          <Heading as="h3" data-testid="offer-modal-user-name-test-id">
+          <Heading as="h3" ml="1rem" data-testId="offer-modal-user-name-test-id">
             {userName}
           </Heading>
         </Flex>
@@ -91,7 +91,7 @@ const OfferModal = ({
               label="Zaloguj się, aby zobaczyć numer"
               data-testid="number-button-tooltip-test-id"
             >
-              <Button variant="blue-button" data-testid="number-button-test-id">
+              <Button data-testid="number-button-test-id">
                 {phoneNumber}
               </Button>
             </Tooltip>

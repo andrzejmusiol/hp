@@ -52,5 +52,9 @@ export const styles = {
       color: colors.black,
       fontSize: '1.1rem',
     },
+    a: {
+      fontFamily: 'QuickSand',
+      fontSize: '1rem',
+    }
   },
 }

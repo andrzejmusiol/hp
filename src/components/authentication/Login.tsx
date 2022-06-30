@@ -37,7 +37,7 @@ const LoginForm = () => (
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <Link color="blue.400">Przypomnij hasło?</Link>
             </Stack>
-            <Button variant="blue-button" data-testId="login-form-submit-button-test-id">
+            <Button data-testId="login-form-submit-button-test-id">
               Zaloguj
             </Button>
           </Stack>

@@ -5,15 +5,19 @@ import '@fontsource/quicksand/500.css'
 import '@fontsource/quicksand/600.css'
 import '@fontsource/quicksand/700.css'
 import { styles } from './styles'
-import { components } from './components'
+import {Button} from './components'
 
-export const theme = extendTheme({
+const overrides = {
   styles,
-  components,
-})
+  components: {
+    Button
+  }
+}
+
+export const theme = extendTheme(overrides)
 
 export interface IThemeProvider {
   children: JSX.Element
 }
 
-export const TProvider = ({ children }: IThemeProvider) => <ChakraProvider theme={theme}>{children}</ChakraProvider>
+export const ThemeProvider = ({ children }: IThemeProvider) => <ChakraProvider resetCSS={true} theme={theme}>{children}</ChakraProvider>

@@ -29,7 +29,7 @@ const SearchBar = (): JSX.Element => {
         <SearchField cities={getCities} citySelectorCallback={citySelectorCallback} />
       </Box>
       <Box p="2">
-        <Button variant="blue-button" loadingText="Szukam" colorScheme="teal" onClick={onSearchHandler}>
+        <Button loadingText="Szukam" onClick={onSearchHandler}>
           <Tooltip label="Wybierz miasto" isDisabled={!!getSelectedCity.value}>
             {getSelectedCity.value ? <Link to="/ogloszenia">Szukaj</Link> : 'Szukaj'}
           </Tooltip>

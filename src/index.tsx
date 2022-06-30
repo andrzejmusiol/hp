@@ -2,7 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
-import { TProvider } from './theme/theme'
+import { ThemeProvider } from './theme/theme'
 import App from './App'
 
 const container = document.getElementById('root')
@@ -10,11 +10,11 @@ const root = createRoot(container!)
 
 root.render(
   <React.StrictMode>
-    <TProvider>
+    <ThemeProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </TProvider>
+    </ThemeProvider>
   </React.StrictMode>
 )
 

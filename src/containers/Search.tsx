@@ -11,15 +11,15 @@ const Search = (): JSX.Element => (
         Chcesz komuś pomóc?
       </Heading>
     </Center>
-    <Text data-testid="search-sub-heading-test-id">
+    <Text data-testid="search-sub-heading-test-id" align="center">
       Znajdź ogłoszenia w Twojej okolicy, pomóż sąsiadom, wesprzyj lokalną społeczność, zgarniaj nagrody!
     </Text>
     <UsageCounter />
     <SearchBar />
     <Box textAlign="center">
-      <Text mb="0">Potrzebujesz pomocy?</Text>
+      <Text mb="1rem">Potrzebujesz pomocy?</Text>
       <Link to="/">
-        <Button variant="link-button">Dodaj ogłoszenie</Button>
+        <Button variant="link">Dodaj ogłoszenie</Button>
       </Link>
     </Box>
   </Container>
