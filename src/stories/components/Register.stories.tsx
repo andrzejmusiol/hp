@@ -5,6 +5,7 @@ import { Story } from '@storybook/react'
 import { ThemeProvider } from '../../theme/theme'
 import { storyMockDecorator } from '../../utils/mockUtils'
 import RegisterForm from '../../components/authentication/Register'
+import { unauthenticatedUser } from '../../mocks/store'
 
 export default {
   title: 'Components',
@@ -21,4 +22,4 @@ const Template = () => (
 
 export const RegisterComponent: Story = Template.bind({})
 
-storyMockDecorator(RegisterComponent)
+storyMockDecorator(RegisterComponent, unauthenticatedUser)

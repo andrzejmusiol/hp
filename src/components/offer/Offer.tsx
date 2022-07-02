@@ -2,27 +2,20 @@ import React, { useMemo } from 'react'
 import { Box, Heading, Badge, Text, Skeleton, useDisclosure } from '@chakra-ui/react'
 import { IOffersContainer } from '../../types/types'
 import UserAvatar from '../avatars/UserAvatar'
-import { avatarsColors } from '../../theme/colors'
 import OfferModal from './OfferModal'
+import { useAvatarColor } from '../../hooks/componentHooks'
 
 const Offer = ({ offer, user, isLoading, isUserAuthenticated }: IOffersContainer): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const renderLimitedContent = (content: string) => (content.length > 65 ? `${content.substring(0, 65)}...` : content)
 
-  const avatarOfferColor = useMemo(
-    () => avatarsColors[Object.keys(avatarsColors)[Math.floor(Math.random() * Object.keys(avatarsColors).length)]],
-    []
-  )
+  const { avatarColor } = useAvatarColor()
 
   const userAvatar = useMemo(
     () => (
-      <UserAvatar
-        userName={user.personalData.name}
-        data-testid="offer-avatar-test-id"
-        avatarColors={avatarOfferColor}
-      />
+      <UserAvatar userName={user.personalData.name} data-testid="offer-avatar-test-id" avatarColors={avatarColor} />
     ),
-    [user, avatarOfferColor]
+    [user, avatarColor]
   )
 
   return (

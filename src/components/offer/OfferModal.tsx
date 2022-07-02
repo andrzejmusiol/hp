@@ -14,18 +14,8 @@ import {
   Tooltip,
   Badge,
 } from '@chakra-ui/react'
-import { IOffer } from '../../types/types'
+import { IOfferModal } from '../../types/types'
 import Overlay from './Overlay'
-
-interface IOfferModal {
-  avatar: JSX.Element
-  userName: string
-  phone: number
-  isOpen: boolean
-  onClose: () => void
-  offer: IOffer
-  isUserAuthenticated: boolean
-}
 
 const OfferModal = ({
   avatar,

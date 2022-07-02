@@ -7,6 +7,7 @@ import { storyMockDecorator } from '../../utils/mockUtils'
 import Header from '../../components/header/Header'
 import Search from '../../containers/Search'
 import Footer from '../../components/footer/Footer'
+import { unauthenticatedUser } from '../../mocks/store'
 
 export default {
   title: 'Pages',
@@ -27,4 +28,4 @@ const Template = () => (
 
 export const SearchPage: Story = Template.bind({})
 
-storyMockDecorator(SearchPage)
+storyMockDecorator(SearchPage, unauthenticatedUser)

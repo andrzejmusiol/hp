@@ -7,6 +7,7 @@ import { storyMockDecorator } from '../../utils/mockUtils'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Offers from '../../containers/Offers'
+import { unauthenticatedUser } from '../../mocks/store'
 
 export default {
   title: 'Pages',
@@ -27,4 +28,4 @@ const Template = () => (
 
 export const ResultsPage: Story = Template.bind({})
 
-storyMockDecorator(ResultsPage)
+storyMockDecorator(ResultsPage, unauthenticatedUser)

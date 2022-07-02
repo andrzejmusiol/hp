@@ -27,7 +27,7 @@ const Footer = (): JSX.Element => (
           </Link>
         </Text>
       </Stack>
-      <Text>© {new Date().getFullYear()} Help-fans. Wszystkie prawa zastrzeżone</Text>
+      S<Text fontSize="md">© {new Date().getFullYear()} Help-fans. Wszystkie prawa zastrzeżone</Text>
     </Container>
   </Box>
 )
