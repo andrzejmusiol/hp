@@ -10,6 +10,7 @@ import { authenticatedUser } from '../../mocks/store'
 export default {
   title: 'Pages',
   component: Dashboard,
+  decorators: [],
 }
 
 const Template = () => (

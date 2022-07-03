@@ -11,7 +11,7 @@ import Dashboard from './containers/dashboard/Dashboard'
 import { ROUTES } from './contants'
 import LoginForm from './components/authentication/Login'
 import RegisterForm from './components/authentication/Register'
-import UserProfile from './containers/dashboard/UserProfile'
+import UserSettings from './containers/dashboard/UserSettings'
 import UserOffers from './containers/dashboard/UserOffers'
 
 const App = (): JSX.Element => (
@@ -24,7 +24,7 @@ const App = (): JSX.Element => (
         <Route path={ROUTES.LOGIN} element={<LoginForm />} />
         <Route path={ROUTES.REGISTER} element={<RegisterForm />} />
         <Route path={ROUTES.DASHBOARD} element={<Dashboard />}>
-          <Route path={ROUTES.USER_PROFILE} element={<UserProfile />} />
+          <Route path={ROUTES.USER_PROFILE} element={<UserSettings />} />
           <Route path={ROUTES.USER_OFFERS} element={<UserOffers />} />
         </Route>
       </Routes>

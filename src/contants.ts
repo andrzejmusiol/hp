@@ -13,6 +13,12 @@ export const ROUTES = {
   USER_OFFERS: '/konto/moje-gloszenia',
 }
 
+export const ROUTES_SIDEBAR_NAMES = {
+  USER_SETTINGS: 'Ustawienia',
+  USER_OFFERS: 'Ogłoszenia',
+  LOG_OUT: 'Wyloguj',
+}
+
 export const HEADER_EXCLUDED_PATHS = [
   ROUTES.LOGIN,
   ROUTES.REGISTER,

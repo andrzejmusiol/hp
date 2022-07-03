@@ -9,7 +9,7 @@ const Dashboard = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box minH="100vh" bg={colors.brightBlue}>
+    <Box minH="100vh" bg={colors.brightBlue} data-testid="dashboard-test-id">
       <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerContent>

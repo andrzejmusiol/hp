@@ -1,5 +1,5 @@
 import React from 'react'
 
-const UserOffers = () => <>Ogłoszenia</>
+const UserOffers = () => <div data-testid="user-offers-test-id">Ogłoszenia</div>
 
 export default UserOffers

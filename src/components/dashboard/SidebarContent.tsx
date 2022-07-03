@@ -4,15 +4,30 @@ import { AiOutlineUser, AiOutlineContainer, AiOutlineRollback } from 'react-icon
 import { Link } from 'react-router-dom'
 import NavItem from './NavItem'
 import { ILinkItem, ISidebar } from '../../types/types'
-import { DRAWER_BUTTON_TYPES, ROUTES } from '../../contants'
+import { DRAWER_BUTTON_TYPES, ROUTES, ROUTES_SIDEBAR_NAMES } from '../../contants'
 import UserProfileIcon from '../../assets/icons/UserProfile'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { useAvatarColor, useUser } from '../../hooks/componentHooks'
 
 const LinkItems: Array<ILinkItem> = [
-  { name: 'Profil', icon: AiOutlineUser, routeLink: ROUTES.USER_PROFILE, type: DRAWER_BUTTON_TYPES.normal },
-  { name: 'Ogłoszenia', icon: AiOutlineContainer, routeLink: ROUTES.USER_OFFERS, type: DRAWER_BUTTON_TYPES.normal },
-  { name: 'Wyloguj', icon: AiOutlineRollback, routeLink: ROUTES.START, type: DRAWER_BUTTON_TYPES.warning },
+  {
+    name: ROUTES_SIDEBAR_NAMES.USER_SETTINGS,
+    icon: AiOutlineUser,
+    routeLink: ROUTES.USER_PROFILE,
+    type: DRAWER_BUTTON_TYPES.normal,
+  },
+  {
+    name: ROUTES_SIDEBAR_NAMES.USER_OFFERS,
+    icon: AiOutlineContainer,
+    routeLink: ROUTES.USER_OFFERS,
+    type: DRAWER_BUTTON_TYPES.normal,
+  },
+  {
+    name: ROUTES_SIDEBAR_NAMES.LOG_OUT,
+    icon: AiOutlineRollback,
+    routeLink: ROUTES.START,
+    type: DRAWER_BUTTON_TYPES.warning,
+  },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
@@ -22,12 +37,24 @@ const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
   const { userAvatar } = useUser(getUserName, avatarColor)
 
   return (
-    <Box bg="white" w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest} as="nav" zIndex="sticky" height="full">
+    <Box
+      bg="white"
+      w={{ base: 'full', md: 60 }}
+      pos="fixed"
+      h="full"
+      {...rest}
+      as="nav"
+      zIndex="sticky"
+      height="full"
+      data-testid="dashboard-sidebar-test-id"
+    >
       <Flex alignItems="center" m="1.7rem">
         {isUserAuthenticated ? (
           <Flex alignItems="center">
             {userAvatar}
-            <Box ml="0.5rem">{getUserName}</Box>
+            <Box ml="0.5rem" data-testid={`sidebar-${getUserName}-test-id`}>
+              {getUserName}
+            </Box>
           </Flex>
         ) : (
           <Link to="/login">
@@ -37,7 +64,7 @@ const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} route={link.routeLink} type={link.type}>
+        <NavItem key={link.name} icon={link.icon} route={link.routeLink} type={link.type} name={link.name}>
           {link.name}
         </NavItem>
       ))}

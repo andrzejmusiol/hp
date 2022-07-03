@@ -91,6 +91,7 @@ export interface INavItem {
   children: string
   route: string
   type: string
+  name: string
 }
 
 export interface IOfferModal {

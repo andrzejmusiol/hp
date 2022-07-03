@@ -5,7 +5,7 @@ import { INavItem } from '../../types/types'
 import { colors } from '../../theme/colors'
 import { DRAWER_BUTTON_TYPES } from '../../contants'
 
-const NavItem = ({ icon, children, route, type }: INavItem) => {
+const NavItem = ({ icon, children, route, type, name }: INavItem) => {
   const getTypeColor = () => (type === DRAWER_BUTTON_TYPES.warning ? colors.red : colors.black)
 
   return (
@@ -23,6 +23,7 @@ const NavItem = ({ icon, children, route, type }: INavItem) => {
           color: `${colors.lightBlue}`,
           transition: '0.3s ease-out',
         }}
+        data-testid={`sidebar-${name}-test-id`}
       >
         {icon && (
           <Icon
