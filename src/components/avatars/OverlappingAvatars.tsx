@@ -1,14 +1,9 @@
 import React from 'react'
 import { Avatar, AvatarGroup } from '@chakra-ui/react'
 import { avatarsColors } from '../../theme/colors'
+import { IUserAvatars } from '../../types/types'
 
-import { IOfferUser } from '../../types/types'
-
-interface IUserAvatar {
-  users: IOfferUser[]
-}
-
-const OverlappingAvatars = ({ users }: IUserAvatar): JSX.Element => (
+const OverlappingAvatars = ({ users }: IUserAvatars): JSX.Element => (
   <AvatarGroup size="md" max={3}>
     {users.map((user) => {
       const colors =

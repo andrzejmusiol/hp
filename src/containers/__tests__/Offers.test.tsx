@@ -11,7 +11,7 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import Offers from '../Offers'
 import { setSelectedCity } from '../../store/citiesSlice'
-import { mockedStore } from '../../mocks/store'
+import { composeStoreWithUnauthenticatedUser } from '../../mocks/store'
 import '@testing-library/jest-dom/extend-expect'
 
 let wrapper: RenderResult
@@ -32,7 +32,7 @@ const renderComponent = (store: Store) =>
 
 describe('<Offers />', () => {
   beforeEach(async () => {
-    const store = mockStore(mockedStore)
+    const store = mockStore(composeStoreWithUnauthenticatedUser)
     store.dispatch(
       setSelectedCity({
         value: 'zielona-gora',

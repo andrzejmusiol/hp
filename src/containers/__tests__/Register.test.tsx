@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
-import { mockedStore } from '../../mocks/store'
+import { composeStoreWithUnauthenticatedUser } from '../../mocks/store'
 import '@testing-library/jest-dom/extend-expect'
 import RegisterForm from '../../components/authentication/Register'
 
@@ -26,7 +26,7 @@ const renderComponent = (store: Store) =>
 
 describe('<RegisterForm />', () => {
   beforeEach(async () => {
-    const store = mockStore(mockedStore)
+    const store = mockStore(composeStoreWithUnauthenticatedUser)
     wrapper = await renderComponent(store)
   })
 

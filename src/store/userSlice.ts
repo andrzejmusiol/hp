@@ -3,6 +3,7 @@ import { IUser } from '../types/types'
 
 const initialState: IUser = {
   isAuthenticated: false,
+  userName: '',
 }
 
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {

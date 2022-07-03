@@ -1,16 +1,5 @@
-export interface ICityOption {
-  id: number
-  name: string
-  state_id: number
-  state_code: string
-  state_name: string
-  country_id: number
-  country_code: string
-  country_name: string
-  latitude: string
-  longitude: string
-  wikiDataId: string
-}
+import { IconType } from 'react-icons'
+import { FlexProps, BoxProps } from '@chakra-ui/react'
 
 export interface ICity {
   value: string
@@ -19,11 +8,6 @@ export interface ICity {
 
 export interface ICities {
   cities: ICity[]
-}
-
-export interface ICitySelector {
-  cities: ICity[]
-  citySelectorCallback: (city: ICity) => void
 }
 
 export interface ICitiesState extends ICities {
@@ -85,13 +69,6 @@ export interface IOffersState extends IOffers {
   offersError: boolean
 }
 
-export interface IOffersContainer {
-  offer: IOffer
-  user: IOfferUser
-  isLoading: boolean
-  isUserAuthenticated: boolean
-}
-
 export interface IMockStore {
   state: any
   children: JSX.Element
@@ -99,4 +76,67 @@ export interface IMockStore {
 
 export interface IUser {
   isAuthenticated: boolean
+  userName: string
+}
+
+export interface UserAuth {
+  isAuthenticated: boolean
+  userName: string
+}
+
+// Components props
+
+export interface INavItem {
+  icon: IconType
+  children: string
+  route: string
+  type: string
+  name: string
+}
+
+export interface IOfferModal {
+  avatar: JSX.Element
+  userName: string
+  phone: number
+  isOpen: boolean
+  onClose: () => void
+  offer: IOffer
+  isUserAuthenticated: boolean
+}
+
+export interface ILinkItem {
+  name: string
+  icon: IconType
+  routeLink: string
+  type: string
+}
+
+export interface ISidebar extends BoxProps {
+  onClose: () => void
+}
+
+export interface IMobile extends FlexProps {
+  onOpen: () => void
+}
+
+export interface IUserAvatar {
+  userName: string
+  avatarColors: string[]
+  size?: string
+}
+
+export interface IUserAvatars {
+  users: IOfferUser[]
+}
+
+export interface IOffersContainer {
+  offer: IOffer
+  user: IOfferUser
+  isLoading: boolean
+  isUserAuthenticated: boolean
+}
+
+export interface ICitySelector {
+  cities: ICity[]
+  citySelectorCallback: (city: ICity) => void
 }

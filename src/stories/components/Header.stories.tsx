@@ -5,6 +5,7 @@ import { Story } from '@storybook/react'
 import { ThemeProvider } from '../../theme/theme'
 import Header from '../../components/header/Header'
 import { storyMockDecorator } from '../../utils/mockUtils'
+import { authenticatedUser, unauthenticatedUser } from '../../mocks/store'
 
 export default {
   title: 'Components',
@@ -19,6 +20,8 @@ const Template = () => (
   </BrowserRouter>
 )
 
-export const AppHeader: Story = Template.bind({})
+export const AppHeaderWithAuthUser: Story = Template.bind({})
+export const AppHeaderWithUnauthenticatedUser: Story = Template.bind({})
 
-storyMockDecorator(AppHeader)
+storyMockDecorator(AppHeaderWithUnauthenticatedUser, unauthenticatedUser)
+storyMockDecorator(AppHeaderWithAuthUser, authenticatedUser)

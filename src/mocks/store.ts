@@ -1,9 +1,16 @@
 import { cities, offers, users } from './data'
 
+export const authenticatedUser = {
+  isAuthenticated: true,
+  userName: 'User Name',
+}
+
+export const unauthenticatedUser = {
+  isAuthenticated: false,
+  userName: '',
+}
+
 export const mockedStore = {
-  user: {
-    isAuthenticated: false,
-  },
   users: {
     users,
     usersLoading: false,
@@ -36,4 +43,14 @@ export const mockedStore = {
     offersLoading: false,
     offersError: false,
   },
+}
+
+export const composeStoreWithAuthenticatedUser = {
+  user: authenticatedUser,
+  ...mockedStore,
+}
+
+export const composeStoreWithUnauthenticatedUser = {
+  user: authenticatedUser,
+  ...mockedStore,
 }

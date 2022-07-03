@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux'
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 import React from 'react'
-import { IMockStore } from '../types/types'
+import { IMockStore, UserAuth } from '../types/types'
 import { mockedStore } from '../mocks/store'
 
 export const MockStore = ({ state, children }: IMockStore) => {
@@ -34,11 +34,12 @@ export const MockStore = ({ state, children }: IMockStore) => {
 }
 
 // eslint-disable-next-line no-return-assign
-export const storyMockDecorator = (component: any) =>
+export const storyMockDecorator = (component: any, userAuth: UserAuth) =>
   (component.decorators = [
     (story: any) => (
       <MockStore
         state={{
+          user: userAuth,
           ...mockedStore,
         }}
       >

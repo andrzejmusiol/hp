@@ -3,23 +3,24 @@ import { BrowserRouter } from 'react-router-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react'
 import { ThemeProvider } from '../../theme/theme'
-import Search from '../../containers/Search'
 import { storyMockDecorator } from '../../utils/mockUtils'
-import { unauthenticatedUser } from '../../mocks/store'
+import Dashboard from '../../containers/dashboard/Dashboard'
+import { authenticatedUser } from '../../mocks/store'
 
 export default {
-  title: 'Components',
-  component: Search,
+  title: 'Pages',
+  component: Dashboard,
+  decorators: [],
 }
 
-export const Template = () => (
+const Template = () => (
   <BrowserRouter>
     <ThemeProvider>
-      <Search />
+      <Dashboard />
     </ThemeProvider>
   </BrowserRouter>
 )
 
-export const SearchComponent: Story = Template.bind({})
+export const UserDashboard: Story = Template.bind({})
 
-storyMockDecorator(SearchComponent, unauthenticatedUser)
+storyMockDecorator(UserDashboard, authenticatedUser)

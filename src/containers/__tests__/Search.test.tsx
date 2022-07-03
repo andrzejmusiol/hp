@@ -9,7 +9,7 @@ import { Store } from 'redux'
 import Header from '../../components/header/Header'
 import Search from '../Search'
 import Footer from '../../components/footer/Footer'
-import { mockedStore } from '../../mocks/store'
+import { composeStoreWithUnauthenticatedUser } from '../../mocks/store'
 
 let wrapper: RenderResult
 
@@ -29,7 +29,7 @@ const renderComponent = (store: Store) =>
 
 describe('<Search />', () => {
   beforeEach(async () => {
-    const store = mockStore(mockedStore)
+    const store = mockStore(composeStoreWithUnauthenticatedUser)
     wrapper = await renderComponent(store)
   })
 
@@ -53,7 +53,7 @@ describe('<Search />', () => {
     const avatars = wrapper.container.getElementsByClassName('chakra-avatar').length
 
     expect(usageCounter).toBeInTheDocument()
-    expect(avatars).toBe(3)
+    expect(avatars).toBe(4)
   })
 
   it('Should render search bar', async () => {

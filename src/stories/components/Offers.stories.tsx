@@ -5,6 +5,7 @@ import { Story } from '@storybook/react'
 import Offers from '../../containers/Offers'
 import { ThemeProvider } from '../../theme/theme'
 import { storyMockDecorator } from '../../utils/mockUtils'
+import { unauthenticatedUser } from '../../mocks/store'
 
 export default {
   title: 'Components',
@@ -21,4 +22,4 @@ const Template = () => (
 
 export const OffersComponent: Story = Template.bind({})
 
-storyMockDecorator(OffersComponent)
+storyMockDecorator(OffersComponent, unauthenticatedUser)
