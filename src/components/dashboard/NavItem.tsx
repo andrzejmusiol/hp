@@ -12,8 +12,8 @@ const NavItem = ({ icon, children, route, type }: INavItem) => {
     <Link to={route}>
       <Flex
         align="center"
-        p="4"
-        mx="4"
+        p="1rem"
+        mx="1rem"
         borderRadius="lg"
         role="group"
         cursor="pointer"
@@ -26,7 +26,7 @@ const NavItem = ({ icon, children, route, type }: INavItem) => {
       >
         {icon && (
           <Icon
-            mr="4"
+            mr="1rem"
             fontSize="16"
             _groupHover={{
               color: `${colors.lightBlue}`,

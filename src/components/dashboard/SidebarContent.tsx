@@ -23,7 +23,7 @@ const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
 
   return (
     <Box bg="white" w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest} as="nav" zIndex="sticky" height="full">
-      <Flex alignItems="center" m="0.7rem" justifyContent="space-between">
+      <Flex alignItems="center" m="1.7rem">
         {isUserAuthenticated ? (
           <Flex alignItems="center">
             {userAvatar}

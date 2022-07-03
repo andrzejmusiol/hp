@@ -85,9 +85,6 @@ export interface UserAuth {
 }
 
 // Components props
-export interface IHeader {
-  withBrand?: boolean
-}
 
 export interface INavItem {
   icon: IconType

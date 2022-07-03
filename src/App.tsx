@@ -16,8 +16,8 @@ import UserOffers from './containers/dashboard/UserOffers'
 
 const App = (): JSX.Element => (
   <Provider store={store}>
-    <Box w="100%" p={4}>
-      <Header withBrand />
+    <Box w="100%">
+      <Header />
       <Routes>
         <Route index element={<Search />} />
         <Route path={ROUTES.OFFERS} element={<Offers />} />
