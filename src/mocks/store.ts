@@ -44,3 +44,13 @@ export const mockedStore = {
     offersError: false,
   },
 }
+
+export const composeStoreWithAuthenticatedUser = {
+  user: authenticatedUser,
+  ...mockedStore,
+}
+
+export const composeStoreWithUnauthenticatedUser = {
+  user: authenticatedUser,
+  ...mockedStore,
+}

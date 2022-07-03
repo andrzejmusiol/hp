@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import thunk from 'redux-thunk'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
-import { authenticatedUser, mockedStore } from '../../mocks/store'
+import { composeStoreWithAuthenticatedUser } from '../../mocks/store'
 import '@testing-library/jest-dom/extend-expect'
 import Dashboard from '../dashboard/Dashboard'
 import { ROUTES_SIDEBAR_NAMES } from '../../contants'
@@ -25,14 +25,9 @@ const renderComponent = (store: Store) =>
     </BrowserRouter>
   )
 
-const composeStoreWithAuthUser = {
-  user: authenticatedUser,
-  ...mockedStore,
-}
-
 describe('<Dashboard />', () => {
   beforeEach(async () => {
-    const store = mockStore(composeStoreWithAuthUser)
+    const store = mockStore(composeStoreWithAuthenticatedUser)
     wrapper = await renderComponent(store)
   })
 
