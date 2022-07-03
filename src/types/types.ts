@@ -109,7 +109,7 @@ export interface IOfferModal {
 export interface ILinkItem {
   name: string
   icon: IconType
-  route: string
+  routeLink: string
   type: string
 }
 

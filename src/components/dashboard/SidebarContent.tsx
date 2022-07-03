@@ -4,15 +4,15 @@ import { AiOutlineUser, AiOutlineContainer, AiOutlineRollback } from 'react-icon
 import { Link } from 'react-router-dom'
 import NavItem from './NavItem'
 import { ILinkItem, ISidebar } from '../../types/types'
-import { DRAWER_BUTTON_TYPES } from '../../contants'
+import { DRAWER_BUTTON_TYPES, ROUTES } from '../../contants'
 import UserProfileIcon from '../../assets/icons/UserProfile'
 import { useAppSelector } from '../../hooks/storeHooks'
 import { useAvatarColor, useUser } from '../../hooks/componentHooks'
 
 const LinkItems: Array<ILinkItem> = [
-  { name: 'Profil', icon: AiOutlineUser, route: '/', type: DRAWER_BUTTON_TYPES.normal },
-  { name: 'Ogłoszenia', icon: AiOutlineContainer, route: '/', type: DRAWER_BUTTON_TYPES.normal },
-  { name: 'Wyloguj', icon: AiOutlineRollback, route: '/', type: DRAWER_BUTTON_TYPES.warning },
+  { name: 'Profil', icon: AiOutlineUser, routeLink: ROUTES.USER_PROFILE, type: DRAWER_BUTTON_TYPES.normal },
+  { name: 'Ogłoszenia', icon: AiOutlineContainer, routeLink: ROUTES.USER_OFFERS, type: DRAWER_BUTTON_TYPES.normal },
+  { name: 'Wyloguj', icon: AiOutlineRollback, routeLink: ROUTES.START, type: DRAWER_BUTTON_TYPES.warning },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
@@ -22,7 +22,7 @@ const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
   const { userAvatar } = useUser(getUserName, avatarColor)
 
   return (
-    <Box bg="white" w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest}>
+    <Box bg="white" w={{ base: 'full', md: 60 }} pos="fixed" h="full" {...rest} as="nav" zIndex="sticky" height="full">
       <Flex alignItems="center" m="0.7rem" justifyContent="space-between">
         {isUserAuthenticated ? (
           <Flex alignItems="center">
@@ -37,7 +37,7 @@ const SidebarContent = ({ onClose, ...rest }: ISidebar) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} route={link.route} type={link.type}>
+        <NavItem key={link.name} icon={link.icon} route={link.routeLink} type={link.type}>
           {link.name}
         </NavItem>
       ))}

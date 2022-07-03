@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Story } from '@storybook/react'
 import { ThemeProvider } from '../../theme/theme'
 import { storyMockDecorator } from '../../utils/mockUtils'
-import Dashboard from '../../containers/Dashboard'
+import Dashboard from '../../containers/dashboard/Dashboard'
 import { authenticatedUser } from '../../mocks/store'
 
 export default {
